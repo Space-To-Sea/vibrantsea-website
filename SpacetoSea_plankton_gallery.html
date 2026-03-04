@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+
+  html{
+    min-height: 100%;
+  }
+  body {
+  /**  background-image: url("static/images/photography/plankton/070220 SBNMSMicro_0001299 stack hr.jpg");
+  background-size: cover;
+  background-attachment: fixed;  
+  **/
+  overflow: hidden;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 2px;
+  padding:0;
+  margin:0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: black;
+  }
+
+  
+
+  .image{
+  width: 100%; 
+  height: 100vh;   
+  object-fit:cover;
+  padding: 0;
+  margin: 0;
+  background: url("static/images/photography/plankton/070220\ SBNMSMicro_0001299\ stack\ hr.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-size: 100%;
+  -webkit-background-size: 100%; 
+  -moz-background-size: 100%; 
+  -o-background-size: 100%; 
+  background-size: 100%; 
+  }
+
+  .gridpage{
+    background-color: black;
+    height: 100vh;
+    margin: 0 0;
+    padding: 0 20%;
+  
+  }
+
+
+ 
+  #second{
+    background-image: url("static/images/exhibition_webpages/plankton/plankton2.jpg");
+  }
+
+  #second-mobile{
+    background-image: url("static/images/exhibition_webpages/plankton/plankton2-mobile.jpg");
+
+  }
+
+  #third{
+    background-image:url("static/images/exhibition_webpages/plankton/plankton3.jpg");
+  }
+
+  #third-mobile{
+    background-image:url("static/images/exhibition_webpages/plankton/plankton3-mobile.jpg");
+  }
+
+  #fourth{
+    background-image: url("static/images/exhibition_webpages/plankton/plankton4.jpg");
+  }
+
+  #fifth{
+    background-image:url("static/images/exhibition_webpages/plankton/plankton5.jpg");
+  }
+
+  #sixth{
+    background-image: url("static/images/exhibition_webpages/plankton/plankton6.jpg");
+  }
+  #seventh{
+    background-image: url("static/images/exhibition_webpages/plankton/plankton7.jpg");
+  }
+  #eighth{
+    background-image: url("static/images/exhibition_webpages/plankton/plankton8.jpg");
+  }
+  #ninth{
+    background-image: url("static/images/exhibition_webpages/plankton/plankton9.jpg");
+  }
+
+  #tenth{
+    background-image: url("static/images/exhibition_webpages/plankton/plankton10.jpg");
+  }
+
+  #tenth-mobile{
+    background-image: url("static/images/exhibition_webpages/plankton/plankton10-mobile.jpg");
+  }
+
+
+ h1{
+   text-align: center;
+   color:#00AEEF;
+   font-weight: bold;
+  }
+
+ p{
+color: white;
+}
+ 
+
+ .centerbox {
+  position: relative;
+  left: 40%;
+   padding: 3%;
+   width: 25%;
+ }
+
+ .emptyspace {
+   height:  70vh;
+ }
+ 
+
+/**grid view**/
+.grid_button{
+  position: fixed;
+  cursor: pointer;
+  top: 78vh;
+  left: 95%;
+  font-size: 10vw;
+  color: white !important;
+  background-color: transparent;
+  text-decoration:none;  
+  padding: 0;
+  margin: 0;
+}
+
+    .grid_button:hover {
+       opacity: 0.5;
+     }
+
+.popUp {
+background: rgba(0,0,0,0.9);
+position: fixed;
+top: 0;
+left:0;
+width:100%;
+height:100%;
+opacity:0;
+pointer-events: none;
+transition: all 0.25s ease-out;
+}
+
+.popUp.open{
+  opacity:1;
+  pointer-events: all;
+}
+     
+* {
+  box-sizing: border-box;
+}
+
+.img-container1 {
+  float: left;
+  width: 33.33%; 
+  padding: 5px;
+  cursor: pointer;
+  border-style: solid;
+  border-color: white;
+}
+
+.img-container2 {
+  float: left;
+  width: 25%;
+  padding: 5px;
+  cursor: pointer; 
+  border-style: solid;
+  border-color: white;
+}
+
+.grid-image{
+ max-width: 100%; 
+ max-height: 100%;
+ background-color: black;
+}
+.img-container1:hover, .img-container2:hover{
+  opacity: 0.5;
+}
+
+.clearfix{
+  margin: 10% 25%;  
+
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title{
+  float: center;
+  width: 100%;
+  color:rgb(208, 208, 208);
+  font-size: 5em;
+  text-align: center;
+}
+
+.description{
+  background-color: black;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+  font-size: 20px;
+}
+
+ 
+/**phone version**/
+.mobile_image{
+    width: 100%;
+    padding: 0%;
+    text-align: center;
+}
+
+.mobile_image img{
+   width: 100%;
+}
+
+/**TWO VERSIONS OF THE NAVIGATION BAR!*/
+/** navigation bar **/
+.topnav {
+  background-color: rgb(53, 58, 63);
+  border-style: solid;
+  border-bottom-color:#00AEEF;
+  border-bottom-width: 3px;
+  display: flex;
+  z-index: 5;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 2px;
+  position: fixed;
+  top: 0px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.topnav-mobile{
+  padding: 4% 0;
+}
+ .topnav_button, .topnav_logo{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+ .topnav p{
+  color: white;
+  font-size: 25px;
+  position: relative;
+  }
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+}
+ .topnav a:hover,.dropdown:hover .dropbtn, .dropdown:hover .nodropbtn {
+  color: #00AEEF;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+ .dropdown .dropbtn, .dropdown .nodropbtn{
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}
+.dropdown-content  {
+  display: none;
+  position: absolute;
+  background-color: rgba(128, 128, 128, 0.55);
+  width:11%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ }
+ .dropdown-content a{
+  float: none;
+  color: white;
+  padding: 5% 2%;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 2vh;
+}
+ .dropdown:hover .dropdown-content{
+  display: block;
+}
+  /**mobile version of nav bar**/
+  .mobile-btn{
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+  
+}
+.choices{
+background: rgba(0,0,0,0.96);
+position: fixed;
+top: 0;
+left:0;
+width:100%;
+height:100%;
+opacity:0;
+pointer-events: none;
+transition: all 0.25s ease-out;
+z-index: 5;
+}
+.galleries_choices {
+position: relative;
+width: 40%;
+top: 30%;
+margin-left: 30%;
+/** NEEDS TO CHANGE LATER **/
+transform: scale(2)
+}
+.btn{
+ padding: 5% 0;
+ width: 100%;
+ color: black;
+ font-weight:bold;
+ background-color: #00AEEF;
+ border-width: 0;
+ font-family:inherit;
+}
+ 
+ 
+.choices.open{
+opacity:1;
+pointer-events: all;
+}
+ 
+.mobile-btn{
+   border: none;
+   outline: none;
+   color: white;
+   background-color: inherit;
+   font-family: inherit;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ .mobile-container{
+display:none;
+}
+.mobile-container.open{
+display:block;
+}
+.desktop-container{
+display: none;
+}
+.desktop-container.open{
+display: block;
+}
+ 
+     
+
+      
+@media (min-width: 900px){
+
+
+.dropdown .dropbtn, .dropdown .nodropbtn{
+     font-size: 17px;
+   }
+
+.mobile-btn{
+     font-size: 25px;
+   }
+
+   .btn{
+font-size: 20px;
+
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!--desktop nav bar-->
+<div class="desktop-container">
+  <div class="topnav">
+  
+    <div class="topnav_logo" style="width: 30%;">
+      <div style="width: 45%">
+            <img class="seaGrantLogo" src="static/images/MIT_MITSG_EqualFocus_Logo_White_large-copy.png" style="max-width: 100%">
+      </div>
+      <div style="width: 45%">
+          <img src="static/images/exhibition_webpages/s2s.png"style="max-width: 100%" >
+      </div>
+      <div  style="width: 10%;">
+         <img src="static/images/dino_drawing.png" style="max-width: 100%">
+      </div>
+    </div>
+  
+    <div class="topnav_button" style="width: 70%">  
+      <div class="dropdown">
+        <a  href="SpacetoSea_mainpage.html"><button class="nodropbtn">Exhibition</button></a>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Gallery</button>
+        <div class="dropdown-content">
+          <a href="SpacetoSea_animal_gallery.html">Marine Life</a>
+          <a href="SpacetoSea_plankton_gallery.html">Plankton</a>
+          <a href="SpacetoSea_satellite_gallery.html">Satellite Images</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="SpacetoSea_about.html"><button class="nodropbtn" >About</button></a>
+     </div>
+      <div class="dropdown">
+        <a href="SpacetoSea_events.html"><button class="nodropbtn">Events</button>
+        </a>
+     </div>
+      <div class="dropdown">
+        <a href="SpacetoSea_blog.html"><button class="nodropbtn" >Blog</button>
+        </a>
+     </div>
+    </div>
+   </div>
+  </div>
+   <!--end of nav bar-->
+  
+   
+    <!--mobile version navigation bar-->
+    
+    <div class="mobile-container">
+    
+        <div class="topnav topnav-mobile">
+      
+          <div class="topnav_logo" style="width: 30%;">
+            <div style="width: 45%">
+                  <img class="seaGrantLogo" src="static/images/MIT_MITSG_EqualFocus_Logo_White_large-copy.png" style="max-width: 100%">
+            </div>
+            <div style="width: 45%">
+                <img src="static/images/exhibition_webpages/s2s.png"style="max-width: 100%" >
+            </div>
+            <div  style="width: 10%;">
+               <img src="static/images/dino_drawing.png" style="max-width: 100%">
+            </div>
+          </div>
+        
+          <div class="topnav_button" style="width: 70%">  
+            <div>
+              <a  href="SpacetoSea_mainpage.html"><button class="mobile-btn">Exhibition</button></a>
+            </div>
+            <div>
+              <button class="mobile-btn" onclick="createChoices()">Gallery</button>
+            </div>
+            <div>
+              <a href="SpacetoSea_about.html"><button class="mobile-btn" >About</button></a>
+           </div>
+            <div>
+              <a href="SpacetoSea_events.html"><button class="mobile-btn">Events</button>
+              </a>
+           </div>
+            <div>
+              <a href="SpacetoSea_blog.html"><button class="mobile-btn" >Blog</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      
+      
+      </div>
+     <!--mobile nav ends here-->
+ 
+   <!--choices-->
+   <div class="choices">
+    <div class="galleries_choices">
+    <a href="SpacetoSea_animal_gallery.html">
+    <button type="button" class="btn btn-info" >&nbsp;&nbsp;&nbsp;&nbsp;Marine Life &nbsp;&nbsp;&nbsp;</button>
+    </a>
+    <br><br>
+    <a href="SpacetoSea_plankton_gallery.html">
+    <button type="button" class="btn btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Plankton&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</button>
+    </a>
+    <br><br>
+    <a href="SpacetoSea_satellite_gallery.html">
+    <button type="button" class="btn btn-info">Satellite Images</button>
+    </a>
+    </div>
+   </div>
+   
+   
+   
+  <!--buttons 
+  <a class="forward_button round" href='SpacetoSea_plankton_gallery.html'>
+    <p style="font-size: 1vw;">planktons</p>
+    &#187;
+  </a>
+  -->
+  <div class="desktop-container">
+  <a class="grid_button" onclick="createPopUp()">
+    <img src="static/images/exhibition_webpages/grid.png" style="width: 50%">
+ </a>
+</div>
+
+
+  
+
+  <div class="gallery">
+
+
+   <!--video-->
+   <div class="video" id="first">
+    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/494983562?h=ad660ded05&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Photomicroscopy: Plankton"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+  </div>
+
+         
+
+      
+  
+  <div class="description">
+        <h1 style="color: white"> <span style="color: rgb(236, 0, 140)">|</span> PHYTOPLANKTON <span style="color: rgb(236, 0, 140)">|</span></h1> 
+        <br>
+        <p>Ocean-drifting plant and animal plankton swirl and turn with the sea in three-dimensional sea-space. They are bizarre yet fascinating creatures that exhibit a seemingly endless variety of body forms, modes of locomotion, and behaviors that are shaped by the physics of life at small scale. Plankton are the unseen engine producing 50% of the oxygen we breathe, and are the foundation of one of our planet’s most dynamic food webs. Plankton are a large part of the abundance and diversity of marine life in New England’s waters.
+        </p>
+
+       </div>         
+  </div>
+
+<div class="desktop-container">
+
+    <div class="image" id="second">
+      <div class="emptyspace"></div>
+      <div style="padding-left: 2vh;"> 
+        <p><span style="background-color:black"><span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Dinoflagellate, Ceratium tripos (<i>20 microns</i>)
+            <br>
+            © 2022 Keith Ellenbogen</span>
+          </p>   
+      </div>
+    </div>
+ 
+  
+    
+  
+    
+      <div class="image" id="third">
+        <div class="emptyspace"></div>
+        <div style="padding-left: 2vh;"> 
+        
+          <p>  <span style="background-color:black"><span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Polychaete larva; size ~300 μm
+            Larval nudibranch 
+              <br>
+              © 2022 Keith Ellenbogen</span>
+            </p>   
+         
+        </div>
+      </div>
+
+
+      <div class="image" id="fourth">
+        <div class="emptyspace"></div>
+        <div style="padding-left: 2vh;"> 
+            <p><span style="background-color:black"><span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Larval nudibranch
+              <br>
+              © 2022 Keith Ellenbogen</span>
+            </p>   
+        </div>
+      </div>
+      <div class="image" id="fifth">
+        <div class="emptyspace"></div>
+        <div style="padding-left: 2vh;"> 
+          <p><span style="background-color:black"><span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Larval crab at the megalops stage; size ~1 mm
+              <br>
+              © 2022 Keith Ellenbogen</span>
+            </p>   
+        </div>
+      </div>
+  
+  
+ 
+      <div class="image" id="sixth">
+        <div class="emptyspace"></div>
+        <div style="padding-left: 2vh;"> 
+          <p><span style="background-color:black"><span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Zooplankton (<i>Evadne nordmanni</i>); <br>  pregnant; size 0.9-1.35 mm
+              <br>
+              © 2022 Keith Ellenbogen</span>
+            </p>   
+        </div>
+      </div>
+      <div class="image" id="seventh">
+        <div class="emptyspace"></div>
+        <div style="padding-left: 2vh;"> 
+          <p><span style="background-color:black"><span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Dinoflagellate (<i>Protoperidinium sp.</i>); size 50 μm
+              <br>
+              © 2022 Keith Ellenbogen</span>
+            </p>   
+        </div>
+      </div>
+  
+      <div class="image" id="eighth">
+        <div class="emptyspace"></div>
+        <div style="padding-left: 2vh;"> 
+          <p><span style="background-color:black"><span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Northern shortfin squid developing within an egg case
+              <br>
+              © 2022 Keith Ellenbogen</span>
+            </p>   
+        </div>
+      </div>
+  
+      <div class="image" id="ninth">
+        <div class="emptyspace"></div>
+        <div style="padding-left: 2vh;"> 
+          <p><span style="background-color:black"><span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>American Lobster eggs in the later stages of development; 
+            <br>
+            Oval black circles are eyespots.<br>
+            © 2022 Keith Ellenbogen</span>
+          </p>
+        </div>
+      </div>
+  
+    
+      <div class="image" id="tenth">
+        <div class="emptyspace"></div>
+        <div style="padding-left: 2vh;"> 
+          <p><span style="background-color:black"><span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Stage IV, American Lobster (<i>Homarus americanus)
+              <br>
+              © 2022 Keith Ellenbogen</span>
+            </p>   
+        </div>
+      </div>
+
+    </div>
+  
+
+<div class="mobile-container">
+  <div class="mobile-container">
+    <div class="mobile_image" >
+        <img src="static/images/exhibition_webpages/plankton/plankton2.jpg" >
+        <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Dinoflagellate, Ceratium tripos (20 microns)</p>
+    </div>
+    <div class="mobile_image" >
+        <img src="static/images/exhibition_webpages/plankton/plankton3.jpg" >
+        <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Polychaete larva; size ~300 μm</p>
+    </div>
+    <div class="mobile_image" >
+        <img src="static/images/exhibition_webpages/plankton/plankton4.jpg" >
+        <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Larval nudibranch</p>
+    </div>
+    <div class="mobile_image" >
+        <img src="static/images/exhibition_webpages/plankton/plankton5.jpg" >
+        <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Larval crab at the megalops stage; size ~1 mm</p>
+    </div>
+    <div class="mobile_image" >
+        <img src="static/images/exhibition_webpages/plankton/plankton6.jpg" >
+        <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Zooplankton (Evadne nordmanni);  pregnant; size 0.9-1.35 mm</p>
+    </div>
+    <div class="mobile_image" >
+      <img src="static/images/exhibition_webpages/plankton/plankton7.jpg" >
+      <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Dinoflagellate (Protoperidinium sp.); size 50 μm</p>
+    </div>
+    <div class="mobile_image" >
+      <img src="static/images/exhibition_webpages/plankton/plankton8.jpg" >
+      <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Northern shortfin squid developing within an egg case</p>
+    </div>
+    <div class="mobile_image" >
+      <img src="static/images/exhibition_webpages/plankton/plankton9.jpg" >
+      <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>American Lobster eggs in the later stages of development; <br>oval black circles are eyespots</p>
+    </div>
+    <div class="mobile_image" >
+      <img src="static/images/exhibition_webpages/plankton/plankton10.jpg" >
+      <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>Stage IV, American Lobster (Homarus americanus)</p>
+    </div>
+</div>
+</div>
+
+
+  <!--popup grid view-->>
+  <div class="popUp">
+    <div class="clearfix">
+      <div class="title">
+        <p style="font-size: 2vh">Gallery View</p>
+      </div>  
+      <div class="img-container1">
+           <img class="grid-image" src="static/images/exhibition_webpages/plankton/plankton1.jpg" onclick="location.href='#first'">
+     </div>
+      <div class="img-container1">
+      <img class="grid-image" src="static/images/exhibition_webpages/plankton/plankton2.jpg" onclick="location.href='#second'">
+      </div>
+      <div class="img-container1">
+      <img class="grid-image" src="static/images/exhibition_webpages/plankton/plankton3.jpg" onclick="location.href='#third'">
+      </div>
+     
+       <div class="img-container2">
+      <img class="grid-image" src="static/images/exhibition_webpages/plankton/plankton4.jpg" onclick="location.href='#fourth'">
+      </div>
+
+      
+      <div class="img-container2">
+      <img class="grid-image" src="static/images/exhibition_webpages/plankton/plankton5.jpg" onclick="location.href='#fifth'">
+      </div>
+
+      
+      <div class="img-container2">
+          <img class="grid-image" src="static/images/exhibition_webpages/plankton/plankton6.jpg" onclick="location.href='#sixth'">
+      </div>
+      <div class="img-container2">
+          <img class="grid-image" src="static/images/exhibition_webpages/plankton/plankton7.jpg" onclick="location.href='#seventh'">
+      </div>
+      <div class="img-container1">
+           <img class="grid-image" src="static/images/exhibition_webpages/plankton/plankton8.jpg" onclick="location.href='#eighth'">
+       </div>
+       <div class="img-container1">
+           <img class="grid-image" src="static/images/exhibition_webpages/plankton/plankton9.jpg" onclick="location.href='#ninth'">
+       </div>
+       <div class="img-container1">
+            <img class="grid-image" src="static/images/exhibition_webpages/plankton/plankton10.jpg" onclick="location.href='#tenth'">
+       </div>
+     
+     
+        
+    </div>
+  </div>
+
+
+
+  </div>
+</body> 
+<script>
+
+
+
+function createPopUp()
+   {
+    const popUp = document.querySelector('.popUp');
+    popUp.classList.add('open');
+    console.log(popUp);
+    console.log(popUp.getElementsByTagName('img')[0].src);
+   }
+
+    //Click on any space other than the picture closes the popUp window
+    const popUp = document.querySelector('.popUp');
+    //e stands for the event, e.target is what we clicked on
+     popUp.addEventListener("click", (e)=>{
+       console.log(e.target.classList);
+     if (e.target.classList.contains('popUp')){
+       popUp.classList.remove('open');
+     }
+     if (e.target.classList.contains('grid-image')){
+       popUp.classList.remove('open');
+     }
+    })
+
+
+
+//choices window
+
+function createChoices()
+  {
+    const choices = document.querySelector('.choices');
+    choices.classList.add('open');
+    console.log(choices);
+  }
+
+      //Click on any space other than the picture closes the choices window
+      const choices = document.querySelector('.choices');
+    //e stands for the event, e.target is what we clicked on
+     choices.addEventListener("click", (e)=>{
+     if (e.target.classList.contains('choices')){
+       choices.classList.remove('open');
+     }
+    })
+
+
+
+var screen_height=window.innerHeight;
+var screen_width=window.innerWidth;
+console.log(screen_height);
+console.log(screen_width);
+if (screen_width<1000){
+ console.log("it's a mobile")
+ var mobile = document.getElementsByClassName("mobile-container");
+ for (var i=0; i<mobile.length; i++)
+ {
+ 
+   mobile[i].classList.add("open");
+ }
+}
+else{
+ console.log("it's a desktop")
+ var desktop = document.getElementsByClassName("desktop-container");
+ for (var i=0; i<desktop.length; i++)
+ {
+   desktop[i].classList.add("open");
+ }
+ 
+}
+
+
+</script>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>satellite</title>
+  <meta name="viewport" content="width=device-width; initial-scale=1">
+
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+    
+
+  body {
+  background-color: black;
+  overflow: hidden;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 2px;
+  padding:0;
+  margin:0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  }
+
+
+ h1{
+   color:#00AEEF;
+   text-align: center;
+   margin: 0%;
+ }
+
+ p{
+color: white;
+}
+
+
+.image_container{
+ width: 100%;
+ margin: 0%;
+ }
+
+ .image_container img{
+ max-width: 100%;
+ }
+
+.centerbox{
+    padding: 3% 3%;
+}
+
+
+
+/**big satellite background images**/
+
+.image{
+  height: 100vh;
+  object-fit:cover;
+  padding: 0;
+  margin: 0;
+  background:  no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+
+
+
+  .first{
+    background-color: black;
+  }
+ 
+  .second{
+    background-image: url("static/images/exhibition_webpages/big satellite images/bigsat-chlorophyll-a.jpg"); 
+  }
+
+  .third{
+    background-image: url("static/images/exhibition_webpages/big satellite images/bigsat-diatoms.jpg");
+  }
+
+  .fourth{
+    background-image: url("static/images/exhibition_webpages/big satellite images/bigsat-dinoflagellates.jpg")
+  }
+
+
+  .fifth{
+    background-image: url("static/images/exhibition_webpages/big satellite images/bigsat-greenalgae.jpg");
+  }
+
+  
+  .sixth{
+    background-image: url("static/images/exhibition_webpages/big satellite images/bigsat-prmnesiophytes.jpg");
+  }
+
+ 
+/**phone version**/
+.mobile_image{
+    width: 90%;
+    padding: 0 5%;
+    text-align: center;
+}
+
+.mobile_image img{
+   width: 100%;
+}
+
+
+/**TWO VERSIONS OF THE NAVIGATION BAR!*/
+/** navigation bar **/
+.topnav {
+  background-color: rgb(53, 58, 63);
+  border-style: solid;
+  border-bottom-color:#00AEEF;
+  border-bottom-width: 3px;
+  display: flex;
+  z-index: 5;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 2px;
+  position: fixed;
+  top: 0px;
+  align-items: center;
+  justify-content: space-around;
+}
+ .topnav_button, .topnav_logo{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+ .topnav p{
+  color: white;
+  font-size: 25px;
+  position: relative;
+  }
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+}
+ .topnav a:hover,.dropdown:hover .dropbtn, .dropdown:hover .nodropbtn {
+  color: #00AEEF;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+ .dropdown .dropbtn, .dropdown .nodropbtn{
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}
+.dropdown-content  {
+  display: none;
+  position: absolute;
+  background-color: rgba(128, 128, 128, 0.55);
+  width:11%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ }
+ .dropdown-content a{
+  float: none;
+  color: white;
+  padding: 5% 2%;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 2vh;
+}
+ .dropdown:hover .dropdown-content{
+  display: block;
+}
+  /**mobile version of nav bar**/
+  .mobile-btn{
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}
+.choices{
+Z-index: 5;
+background: rgba(0,0,0,0.96);
+position: fixed;
+top: 0;
+left:0;
+width:100%;
+height:100%;
+opacity:0;
+pointer-events: none;
+transition: all 0.25s ease-out;
+}
+.galleries_choices {
+position: relative;
+width: 40%;
+top: 30%;
+margin-left: 30%;
+}
+.btn{
+ padding: 5% 0;
+ width: 100%;
+ color: black;
+ font-weight:bold;
+ background-color: #00AEEF;
+ border-width: 0;
+ font-family:inherit;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+.choices.open{
+opacity:1;
+pointer-events: all;
+}
+ 
+.mobile-btn{
+   border: none;
+   outline: none;
+   color: white;
+   background-color: inherit;
+   font-family: inherit;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ .mobile-container{
+display:none;
+}
+.mobile-container.open{
+display:block;
+}
+.desktop-container{
+display: none;
+}
+.desktop-container.open{
+display: block;
+}
+ 
+ 
+
+@media (min-width: 900px) {
+ 
+ 
+ 
+ .dropdown .dropbtn, .dropdown .nodropbtn{
+        font-size: 17px;
+      }
+  
+ .mobile-btn{
+        font-size: 25px;
+      }
+ 
+      
+         .h1{
+         font-size: 54px;
+         } 
+ 
+         .dropdown .dropbtn, .dropdown .nodropbtn{
+           font-size: 20px;
+         }
+ 
+         .intro_image_container{
+             width: 55%;
+             padding: 0% 22.5%;
+     
+         }
+        .centerbox{
+         width: 55%;
+         padding: 5% 22.5%;
+   
+          }
+         .image{
+           height: 100vh;
+         }
+   
+ 
+         .mobile_image p{
+         font-size: 10px;
+         }
+       
+         #more-info{
+             font-size: 1.5vw;
+         }
+ 
+       }
+ 
+ .mobile-container{
+ display:none;
+ }
+ 
+ .mobile-container.open{
+ display:block;
+ }
+ 
+ .desktop-container{
+ display: none;
+ }
+ 
+ .desktop-container.open{
+ display: block;
+ }
+ 
+ </style>
+ </head>
+ 
+ <body>
+ 
+   
+   <!--desktop nav bar-->
+ <div class="desktop-container">
+   <div class="topnav">
+   
+     <div class="topnav_logo" style="width: 30%;">
+       <div style="width: 45%">
+             <img class="seaGrantLogo" src="static/images/MIT_MITSG_EqualFocus_Logo_White_large-copy.png" style="max-width: 100%">
+       </div>
+       <div style="width: 45%">
+           <img src="static/images/exhibition_webpages/s2s.png"style="max-width: 100%" >
+       </div>
+       <div  style="width: 10%;">
+          <img src="static/images/dino_drawing.png" style="max-width: 100%">
+       </div>
+     </div>
+   
+
+     <div class="topnav_button" style="width: 70%">  
+        <div class="dropdown">
+          <a  href="SpacetoSea_mainpage.html"><button class="nodropbtn">Exhibition</button></a>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Gallery</button>
+          <div class="dropdown-content">
+            <a href="SpacetoSea_animal_gallery.html">Marine Life</a>
+            <a href="SpacetoSea_plankton_gallery.html">Plankton</a>
+            <a href="SpacetoSea_satellite_gallery.html">Satellite Images</a>
+          </div>
+        </div>
+        <div class="dropdown">
+            <a href="SpacetoSea_about.html"><button class="nodropbtn" >About</button></a>
+         </div>
+          <div class="dropdown">
+            <a href="SpacetoSea_events.html"><button class="nodropbtn">Events</button>
+            </a>
+         </div>
+          <div class="dropdown">
+            <a href="SpacetoSea_blog.html"><button class="nodropbtn" >Blog</button>
+            </a>
+         </div>
+        </div>
+       </div>
+      </div>
+       <!--end of nav bar-->
+   
+       <div class="mobile-container">
+  
+        <div class="topnav topnav-mobile">
+
+        <div class="topnav_logo" style="width: 30%;">
+            <div style="width: 45%">
+                  <img class="seaGrantLogo" src="static/images/MIT_MITSG_EqualFocus_Logo_White_large-copy.png" style="max-width: 100%">
+            </div>
+            <div style="width: 45%">
+                <img src="static/images/exhibition_webpages/s2s.png"style="max-width: 100%" >
+            </div>
+            <div  style="width: 10%;">
+               <img src="static/images/dino_drawing.png" style="max-width: 100%">
+            </div>
+          </div>
+        <div>
+          <a  href="SpacetoSea_mainpage.html"><button class="mobile-btn">Exhibition</button></a>
+        </div>
+        <div>
+          <button class="mobile-btn" onclick="createChoices()">Gallery</button>
+        </div>
+        <div>
+            <a href="SpacetoSea_about.html"><button class="mobile-btn" >About</button></a>
+         </div>
+          <div>
+            <a href="SpacetoSea_events.html"><button class="mobile-btn">Events</button>
+            </a>
+         </div>
+          <div>
+            <a href="SpacetoSea_blog.html"><button class="mobile-btn" >Blog</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+    
+    </div>
+   <!--mobile nav ends here-->
+
+
+  
+ <!--choices-->
+ <div class="choices">
+    <div class="galleries_choices">
+    <a href="SpacetoSea_animal_gallery.html">
+    <button type="button" class="btn btn-info" >&nbsp;&nbsp;&nbsp;&nbsp;Marine Life &nbsp;&nbsp;&nbsp;</button>
+    </a>
+    <br><br>
+    <a href="SpacetoSea_plankton_gallery.html">
+    <button type="button" class="btn btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Plankton&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</button>
+    </a>
+    <br><br>
+    <a href="SpacetoSea_satellite_gallery.html">
+    <button type="button" class="btn btn-info">Satellite Images</button>
+    </a>
+    </div>
+   </div>
+
+   <div class="intro_image_container">
+    <img src="static/images/exhibition_webpages/big satellite images/truecolor.jpg" style="width:100%;">
+  </div>
+  
+
+<div class="centerbox" id="intro">
+    <h1>Satellite Images</h1>
+    <p >Our ocean planet is a living canvas in which microscopic plankton are so abundant they can transform the color of the sea-surface. At first glance, the ocean appears a solid blue, the result of red spectrum of visible light being absorbed by water. However, the ocean is not a solid color, but rather an ever-changing gradient of blue and green hues. New England’s ocean is often described as emerald-green, the result of an abundance of ocean drifting plankton containing the pigment chlorophyll-a. From a human perspective on Earth, we are too close to the sea-surface to observe the subtle color variations. But from the perspective of NASA Landsat 8 satellites orbiting through space, the ocean’s surface can be viewed as dynamic ever-changing living pallet of swirling brush strokes.
+       <br> <br>
+      At MIT Sea Grant, we are processing NASA’s raw satellite data into works of art that are also scientifically significant to reveal a series of ocean plankton visualizations. They range from True-color images, that are a realistic color representation of the ocean and plankton, to chlorophyll images, that apply a full color spectrum to reveal the absence and intensity of concentrations of ocean chlorophyll-a. Other plankton visualizations combine a modern-day Andy Warhol vibrant color pallet to communicate the abundance of microscopic creatures. Through haptophytes blues, dinoflagellates yellows, diatom purples, and green-algae green, the processed satellite images are an artistic expression that reveals a deeper understanding into our environment at the microscopic and planetary scale. Each visualization is a limited-edition work of art and an environmentally significant snapshot in time.
+   
+       <br><br>
+       <p id="more-info">
+        <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span><span>For more information on satellite images, please visit
+        </span>
+        <a href="http://vibrantsea.mit.edu" style="color:#00AEEF; text-decoration: none " target=_blank>
+         vibrantsea.mit.edu.
+         </a>
+        </p>
+        
+     </p>
+   </div>
+ 
+   <div class="desktop-container">
+
+    <div class="image second"></div>
+    <div class="image third"></div>
+    <div class="image fourth"> </div>
+    <div class="image fifth"></div>
+    <div class="image sixth"></div>
+</div>
+
+    <div class="mobile-container">
+        <div class="mobile_image" >
+            <img src="static/images/exhibition_webpages/big satellite images/chlorophyll-a.jpg" >
+            <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>chlorophyll-a | Nov 4, 2019 </p>
+        </div>
+        <div class="mobile_image" >
+            <img src="static/images/exhibition_webpages/big satellite images/diatoms.jpg" >
+            <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>diatoms | Nov 4, 2019 </p>
+        </div>
+        <div class="mobile_image" >
+            <img src="static/images/exhibition_webpages/big satellite images/dinoflagellates.jpg" >
+            <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>dinoflagellates | Nov 4, 2019 </p>
+        </div>
+        <div class="mobile_image" >
+            <img src="static/images/exhibition_webpages/big satellite images/greenalgae.jpg" >
+            <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>green algae | Nov 4, 2019 </p>
+        </div>
+        <div class="mobile_image" >
+            <img src="static/images/exhibition_webpages/big satellite images/prymnesiophytes.jpg" >
+            <p> <span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>prymnesiophytes | Nov 4, 2019 </p>
+        </div>
+    </div>
+
+
+    <a href="http://vibrantsea.mit.edu/gallery.html" target=_blank>
+        <div class="big_gallery">
+          <div class="image_container">
+            <img src="static/images/exhibition_webpages/satellite-screenshots/screenshot1.png" >
+          </div>
+      
+          <div class="image_container">
+            <img src="static/images/exhibition_webpages/satellite-screenshots/screenshot2.png" >
+          </div>
+      
+          <div class="image_container">
+            <img src="static/images/exhibition_webpages/satellite-screenshots/screenshot3.png">
+          </div>
+      
+          <div class="image_container">
+            <img src="static/images/exhibition_webpages/satellite-screenshots/screenshot4.png">
+          </div>
+      
+          <div class="image_container">
+            <img src="static/images/exhibition_webpages/satellite-screenshots/screenshot5.png">
+          </div>
+      
+          <div class="image_container">
+            <img src="static/images/exhibition_webpages/satellite-screenshots/screenshot6.png">
+          </div>
+        </div>
+        </a> 
+    
+    </body>
+    <script>
+    
+
+
+var screen_height=window.innerHeight;
+var screen_width=window.innerWidth;
+console.log(screen_height);
+console.log(screen_width);
+if (screen_width<990){
+ console.log("it's a mobile")
+ var mobile = document.getElementsByClassName("mobile-container");
+ for (var i=0; i<mobile.length; i++)
+ {
+ 
+   mobile[i].classList.add("open");
+ }
+}
+else{
+ console.log("it's a desktop")
+ var desktop = document.getElementsByClassName("desktop-container");
+ for (var i=0; i<desktop.length; i++)
+ {
+   desktop[i].classList.add("open");
+ }
+ 
+}
+//choices window
+ 
+function createChoices()
+ {
+   const choices = document.querySelector('.choices');
+   choices.classList.add('open');
+   console.log(choices);
+ }
+ 
+     //Click on any space other than the picture closes the choices window
+     const choices = document.querySelector('.choices');
+   //e stands for the event, e.target is what we clicked on
+    choices.addEventListener("click", (e)=>{
+    if (e.target.classList.contains('choices')){
+      choices.classList.remove('open');
+    }
+   })
+
+
+</script>
+</html>
+    
+    
+  
+  
+  
+
+ 

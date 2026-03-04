@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stellwagen Bank National Marine Sanctuary Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="static/js/wheel-zoom.js" type="text/javascript"></script>
+    <script src="static/js/js_images_20211007.js"></script>
+    <link rel="stylesheet" href="static/css/images_css_20211007.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head> 
+<style>
+
+</style>
+</head>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="position: fixed;">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1" style="font-size: x-large;"><b><img src="static/images/MIT_MITSG_EqualFocus_Logo_White_large-copy.png" width="250px">SPACE TO SEA</b> <img src="static/images/dino_drawing.png" width="35px"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="nav navbar-nav">
+        <li class="active nav-item"><a class="nav-link" href="">Satellite Visualization</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="oceancolor.html">Ocean Color</a></li>
+        <li class="nav-item"><a class="nav-link" href="phytoplankton.html">Phytoplankton</a></li>
+        <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
+        <li class="nav-item"><a class="nav-link" href="satellites.html">Remote Sensing</a></li>
+        <li class="nav-item"><a class="nav-link" href="">Timelapse</a></li>
+        <li class="nav-item"><a class="nav-link" href="">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://space2sea.mit.edu">Project Website</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<body>
+<div class="container-fluid" style="overflow: hidden;">
+  <!--Page Title and Thumbnails-->
+  <div class="container-text">
+    <!--TITLE-->
+    <div class="container">
+      <h6 id="title">Ocean Phytoplankton: Truecolor</h6>
+      <h6 id="title2">Massachusetts, USA</h6>
+    </div>
+    <!--THUMBNAILS-->
+    <div class="flex-container" style="display: flex; position: relative;">
+      <div class="truecolor-container">
+        <img class="img" id="truecolor_thumb" src="static/images/original/01.14.2017/truecolor.jpg" style="width: 100%; cursor: pointer;" alt="Truecolor Thumbnail">
+        <div class="overlay" onclick="truecolor()">
+          <div class="text" style="cursor: pointer;">Truecolor</div>
+        </div> 
+      </div>
+      <div class="chlor_a-container">
+        <img class="img" id="chlor_a_thumb" src="static/images/original/01.14.2017/chlor_a.jpg" style="width: 100%; cursor: pointer;" alt="Chlorophyll-a Thumbnail">
+        <div class="overlay" onclick="chlor_a()">
+          <div class="text" style="cursor: pointer;">Chl-a</div>
+        </div> 
+      </div>
+      <div class="diatoms-container">
+        <img class="img" id="diatoms_thumb" src="static/images/original/01.14.2017/diatoms.jpg" style="width: 100%; cursor: pointer;" alt="Diatoms Thumbnail">
+        <div class="overlay" onclick="diatoms()">
+          <div class="text" style="cursor: pointer;">Diatoms</div>
+        </div> 
+      </div>
+      
+      <div class="dinoflagellates-container">
+        <img class="img" id="dinoflagellates_thumb" src="static/images/original/01.14.2017/dinoflagellates.jpg" style="width: 100%; cursor: pointer;" alt="Dinoflagellates Thumbnail">
+        <div class="overlay" onclick="dinoflagellates()">
+          <div class="text" style="cursor: pointer;">Dinoflagellates</div>
+        </div> 
+      </div>
+      
+      <div class="greenalgae-container">
+        <img class="img" id="greenalgae_thumb" src="static/images/original/01.14.2017/greenalgae.jpg" style="width: 100%; cursor: pointer;" alt="Green Algae Thumbnail">
+        <div class="overlay" onclick="greenalgae()">
+          <div class="text" style="cursor: pointer;">GreenAlgae</div>
+        </div> 
+      </div>
+      
+      <div class="haptophytes-container">
+        <img class="img" id="prymnesiophytes_thumb" src="static/images/original/01.14.2017/prymnesiophytes.jpg" style="width: 100%; cursor: pointer;" alt="Haptophytes Thumbnail">
+        <div class="overlay" onclick="haptophytes()">
+          <div class="text" style="cursor: pointer;">Haptophytes</div>
+        </div> 
+      </div>
+    </div>
+  </div>
+  
+  <!--Main Image and Color Bar-->
+  <div class="container-fluid" id="myWindow" style="height: 100%; width: 100%; position: fixed; left: 0; top: 0;">
+      <p id="altitude" style="background-color: rgba(2, 17, 27, .7); z-index: 8; position: fixed; left: 2%; bottom: 85%; color: white; padding: 5px; border-radius: 5px; font-size: large;">Camera Altitude: 200 km</p>
+      <div class="rotate2" style="z-index: 8; position: fixed; left: -15%; bottom: 40%; width: 40%;">
+        <input data-zoom-range type="range" class="slider">
+      </div>
+        <div id="myContent">
+          <img class="img" src="static/images/original/01.14.2017/truecolor.jpg" id="zoom" alt="01.14.2017" style="position: relative;"/>
+          <img class="img" src="static/images/border.png" id="border" alt="border" style="position: absolute; top: 0;"/>
+          <h1 style="position: absolute; top: 1280px; left: 920px; font-size: 65px; color: rgb(2, 17, 27); opacity: .6;">Stellwagen Bank</h1>National Marine Sanctuary
+          <h1 style="position: absolute; top: 1360px; left: 770px; font-size: 65px; color: rgb(2, 17, 27); opacity: .6;">National Marine Sanctuary</h1>
+        </div>
+     
+  </div>
+    
+  <img id="colorbar" class="img" src="" width=0px style="color: black; position: fixed; right: 5px; bottom: 30%;  z-index: 5; background: rgba(255, 255, 255, 0.70)" alt="Color Bar">
+  <h4 id="colorbar name" class="rotate" style="position: fixed; right: 0px; bottom: 40%; color: white; background-color: rgba(2, 17, 27, .7); z-index: 5;"></h4>
+
+  <!--Timeline-->
+  <div class="timeline-container">
+    <div id="timeline-buttons" style="width: 800%; text-align: left; font-size: small;">
+      <button onclick="Jan1417()" style="width: 1%; position: relative; min-width: 100px;" class="button activebtn" id="first">Jan 14, 2017</button>
+      <button onclick="Mar0317()" style="width: 1%; position: relative; min-width: 100px;" class="button">Mar 3, 2017</button>
+      <button onclick="Jul0917()" style="width: 1%; position: relative; min-width: 100px;" class="button">Jul 9, 2017</button>
+      <button onclick="Aug1017()" style="width: 1%; position: relative; min-width: 100px;" class="button">Aug 10, 2017</button>
+      <button onclick="Oct1317()" style="width: 1%; position: relative; min-width: 100px;" class="button">Oct 13, 2017</button>
+      <button onclick="Nov3017()" style="width: 1%; position: relative; min-width: 100px;" class="button">Nov 30, 2017</button>
+      <button onclick="Dec1617()" style="width: 1%; position: relative; min-width: 100px;" class="button">Dec 16, 2017</button>
+      <button onclick="Jan0118()" style="width: 1%; position: relative; min-width: 100px;" class="button">Jan 1, 2018</button>
+      <button onclick="Feb0218()" style="width: 1%; position: relative; min-width: 100px;" class="button">Feb 2, 2018</button>
+      <button onclick="Apr2318()" style="width: 1%; position: relative; min-width: 100px;" class="button">Apr 23, 2018</button>
+      <button onclick="Jun2618()" style="width: 1%; position: relative; min-width: 100px;" class="button">Jun 26, 2018</button>
+      <button onclick="Jul1218()" style="width: 1%; position: relative; min-width: 100px;" class="button">Jul 12, 2018</button>
+      <button onclick="Aug2918()" style="width: 1%; position: relative; min-width: 100px;" class="button">Aug 29, 2018</button>
+      <button onclick="Mar0919()" style="width: 1%; position: relative; min-width: 100px;" class="button">Mar 9, 2019</button>
+    </div>
+</div>
+</div>
+<script>
+  // Get the container element
+var btnContainer = document.getElementById("timeline-buttons");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("button");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("activebtn");
+    current[0].className = 'button';
+    this.className += " activebtn";
+  });
+}
+</script>
+</body>
+
+</html>

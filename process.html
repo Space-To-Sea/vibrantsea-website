@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stellwagen Bank National Marine Sanctuary Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="static/js/wheel-zoom.js" type="text/javascript"></script>
+    <script src="static/js/js_images.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="static/css/images_css.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/navbar_css.css" />
+</head> 
+<style>
+    .col {
+        width: 33.3%;
+    }
+
+    @media screen and (max-width: 750px) {
+        .col {
+            font-size: 13px;
+        }
+    }
+</style>
+</head>
+
+
+<body>
+    <script type="text/javascript">
+        navBar();
+    
+    </script>
+    <div class="container-fluid" style="position: relative; top: 80px;">
+        <h1 style="color: lightgrey;">Processing the Images</h1>
+        <p style="color: lightgray;">Satellites do not work like cameras. Instead of capturing a single scene that closely resembles what we would see with our eyes, a satellite sensor collects
+            data about how different wavelengths of light are reflected off the Earth at every pixel in the image. Therefore, we are not simply taking pictures from space, but rather,
+            start with raw data collected by NASA's Landsat 8 Satellite and meticulously process it into informative and visually striking representations of chlorophyll-a data. </p>
+    </div>
+    <div class="container-fluid" style="position: relative; top: 80px;">
+        <h3 style="color: gray;">Spectral Bands</h3> 
+        <p style="color: lightgray; position: relative;">The Landsat 8 collects data about how light is reflected from the Earth's surface at eleven different wavelengths. These are called spectral bands.</p>
+        <div id="band-process" class="row">
+            <script type="text/javascript">
+                createBands();
+            </script>
+        </div>
+        <h3 style="color: gray;">Interpreting the Data</h3> 
+        <p style="color: lightgray; position: relative;">We then use a program called Seadas to convert the raw data into information about phytoplankton concentration.
+        Seadas applies complex algorithms discovered through years of experiments to the spectral band data and returns accurate estimates of chlorophyll-a concentration in the ocean.
+        All phytoplankton contain the photosynthetic pigment chlorophyll-a, so this is the diagnostic pigment we use to generalize the abundance of them in the water.</p>
+        <div class="row">
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="static/images/process/process_rgb.png" width="100%">
+                <p style="color: lightgray; position: relative; text-align: center">RGB</p>
+            </div>
+            <div class="col">
+                <img src="static/images/process/process_chlor_a.png" width="100%">
+                <p style="color: lightgray; position: relative; text-align: center">Chlorophyll-a</p>
+            </div>
+            <div class="col">
+                <img src="static/images/process/process_chlor_a_grayscale.png" width="100%">
+                <p style="color: lightgray; position: relative; text-align: center">Chlorophyll-a Grayscale</p>
+            </div>
+            <!-- <div class="col">
+                <img src="static/images/04.23.2018.diatoms.jpg" width="100%">
+            </div>
+            <div class="col">
+                <img src="static/images/04.23.2018.dinoflagellates.jpg" width="100%">
+            </div>
+            <div class="col">
+                <img src="static/images/04.23.2018.greenalgae.jpg" width="100%">
+            </div>
+            <div class="col">
+                <img src="static/images/04.23.2018.prymnesiophytes.jpg" width="100%">
+            </div> -->
+        </div>
+        <h3 style="color: gray;">Corrections</h3>
+        <p style="color: lightgray; position: relative;">The outputs from Seadas are riddled with striping and imperfections. We use MATLAB to create stripe corrected verions of
+        the images. However, these often have striping in other places. We combine the Seadas exported images and the MATLAB stripe corrected ones in photoshop to create a final image
+        with the least amount of striping.</p>
+        <div class="row">
+            <div class="col">
+                <img src="static/images/process/process_rgb_stripe_corrected.png" width="100%">
+                <p style="color: lightgray; position: relative; text-align: center">RGB Stripe Corrected</p>
+            </div>
+            <div class="col">
+                <img src="static/images/process/process_chlor_a_stripe_corrected.png" width="100%">
+                <p style="color: lightgray; position: relative; text-align: center">Chlorophyll-a Stripe Corrected</p>
+            </div>
+            <div class="col">
+                <img src="static/images/process/process_chlor_a_grayscale_contrast.png" width="100%">
+                <p style="color: lightgray; position: relative; text-align: center">Chlorophyll-a Grayscale Contrast Increased</p>
+            </div>
+            <!-- <div class="col">
+                <img src="static/images/04.23.2018.diatoms_stripe_corrected.jpg" width="100%">
+            </div>
+            <div class="col">
+                <img src="static/images/04.23.2018.dinoflagellates_stripe_corrected.jpg" width="100%">
+            </div>
+            <div class="col">
+                <img src="static/images/04.23.2018.greenalgae_stripe_corrected.jpg" width="100%">
+            </div>
+            <div class="col">
+                <img src="static/images/04.23.2018.prymnesiophytes_stripe_corrected.jpg" width="100%">
+            </div>
+        </div> -->
+        
+    </div>
+</body>
+</html>

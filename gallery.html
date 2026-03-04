@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stellwagen Bank National Marine Sanctuary Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="static/js/js_gallery.js"></script>
+    <script src="js/main.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="static/css/gallery_css.css" />
+  </head>
+  <body>
+    <script type="text/javascript">
+      navBar();
+
+      var pageHeader = document.createElement("div");
+      pageHeader.id = "page_header";
+      pageHeader.classList.add("row");
+      var pageHeader_col1 = document.createElement("div");
+      pageHeader_col1.id = "pageHeader_col1";
+      pageHeader_col1.classList.add("col-10");
+      var pageHeader_row = document.createElement("div");
+      pageHeader_row.classList.add("row");
+      var h2 = document.createElement("h2");
+      h2.innerHTML =
+        "<b>Phytoplankton of Stellwagen Bank National Marine Sanctuary & Massachusetts</b>";
+      var pageHeader_col2 = document.createElement("div");
+      /*pageHeader_col2.id = "pageHeader_col2";
+      pageHeader_col2.classList.add("col-2");
+      pageHeader_col2.innerHTML =
+        '<a href="gallery_clouds.html"><img id="img_clouds" src="static/images/clouds.png"></a>';
+      */
+      pageHeader_row.appendChild(h2);
+      pageHeader_col1.appendChild(pageHeader_row);
+      pageHeader.appendChild(pageHeader_col1);
+      /*pageHeader.appendChild(pageHeader_col2);*/
+      document.body.appendChild(pageHeader);
+    </script>
+    <!--IMAGES-->
+    <div id="myModal" class="modal" onclick="closeModal()" style="z-index: 10">
+      <span
+        class="close cursor"
+        style="position: relative; top: -10vh"
+        onclick="closeModal()"
+        >&times;</span
+      >
+      <div id="slides" class="modal-content">
+        <script type="text/javascript">
+          $.ajax({
+            type: "GET",
+            url: "slides.json",
+            dataType: "json",
+            success: function (json) {
+              var slides = json;
+              var slidesDiv = document.getElementById("slides");
+              $.each(slides, function (i) {
+                var slideDiv = document.createElement("div");
+                slideDiv.classList.add("mySlides");
+                var image = document.createElement("img");
+                image.src =
+                  "static/images/reduced/fullsize/" +
+                  slides[i].src_folder +
+                  "/" +
+                  slides[i].filename;
+                image.style.width = "100%";
+                slideDiv.appendChild(image);
+                slidesDiv.appendChild(slideDiv);
+              });
+              var caption_container = document.createElement("div");
+              caption_container.classList.add("caption-container");
+              caption_container.innerHTML = '<p id="caption"></p>';
+              slidesDiv.appendChild(caption_container);
+              var colorbar = document.createElement("img");
+              colorbar.src = "";
+              colorbar.id = "colorbar";
+              var h4 = document.createElement("h4");
+              h4.id = "units";
+              slidesDiv.appendChild(colorbar);
+              slidesDiv.appendChild(h4);
+            },
+          });
+        </script>
+      </div>
+    </div>
+    <div
+      id="contact-sheet"
+      class="container-fluid"
+      style="position: relative; right: 0.5%; top: 14vh"
+    >
+      <script type="text/javascript">
+        $.ajax({
+          type: "GET",
+          url: "slides.json",
+          dataType: "json",
+          success: function (json) {
+            var slides = json;
+            var contactSheetDiv = document.getElementById("contact-sheet");
+            var flex_container, container_fluid, container, h5, row_no_gutter;
+            $.each(slides, function (i) {
+              var dateArray = slides[i].src_folder.split(".");
+
+              if (i == 0 || (i / 6) % 1 == 0) {
+                flex_container = document.createElement("div");
+                flex_container.classList.add("flex-container");
+
+                container_fluid = document.createElement("div");
+                container_fluid.classList.add("container-fluid");
+
+                container = document.createElement("div");
+                container.classList.add("container");
+
+                h5 = document.createElement("h5");
+                h5.innerHTML =
+                  months[Number(dateArray[0]) - 1].shortname +
+                  "<br>" +
+                  +dateArray[1] +
+                  "<br>" +
+                  dateArray[2];
+
+                row_no_gutter = document.createElement("div");
+                row_no_gutter.classList.add("row");
+                row_no_gutter.classList.add("no-gutter");
+                row_no_gutter.classList.add("NoGutter");
+
+                container.appendChild(h5);
+                container_fluid.appendChild(row_no_gutter);
+                flex_container.appendChild(container_fluid);
+                flex_container.appendChild(container);
+                contactSheetDiv.appendChild(flex_container);
+              }
+
+              var col_2 = document.createElement("div");
+              col_2.classList.add("col-2");
+
+              var image_container = document.createElement("div");
+              image_container.classList.add("image-container");
+
+              var shortname = slides[i].filename.replace(".jpg", "");
+              var phyto_longname =
+                names[names.map((x) => x.shortname).indexOf(shortname)]
+                  .longname;
+              var dateDisplay =
+                months[Number(dateArray[0]) - 1].longname +
+                " " +
+                parseInt(dateArray[1], 10) +
+                ", " +
+                dateArray[2];
+
+              image_container.onclick = function () {
+                openModal();
+                currentSlide(i + 1);
+                setColorbar(shortname);
+              };
+
+              var image = document.createElement("img");
+              image.classList.add("demo");
+              image.src =
+                "static/images/reduced/thumbnails/" +
+                slides[i].src_folder +
+                "/" +
+                slides[i].filename;
+              image.alt = phyto_longname + " | " + dateDisplay;
+
+              var overlay = document.createElement("div");
+              overlay.classList.add("overlay");
+
+              var text = document.createElement("div");
+              text.classList.add("text");
+              text.innerHTML = phyto_longname + " | " + dateDisplay;
+
+              overlay.appendChild(text);
+              image_container.appendChild(image);
+              image_container.appendChild(overlay);
+              col_2.appendChild(image_container);
+              row_no_gutter.appendChild(col_2);
+            });
+          },
+        });
+      </script>
+    </div>
+  </body>
+</html>

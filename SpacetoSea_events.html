@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+html{
+    min-height: 100%;
+    background-color: black;
+    scroll-behavior: smooth;
+  }
+  body {
+  overflow: hidden;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 2px;
+  padding:0;
+  margin:0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: black;
+  }
+
+
+p{
+  color: white;
+}
+
+h1{
+    
+    color: white;
+    text-align: left;
+    margin: 0;
+    padding: 3% 0%;
+    
+  }
+
+.box{
+    width: 60%;
+    padding-left: 20%;
+    padding-top:2%;
+    padding-bottom:2%;
+    object-fit: contain;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+
+  .box p{
+ 
+    text-align: left;
+  }
+
+
+  .mobile-box{
+    width: 80%;
+    padding: 13% 10%;
+    text-align: center;
+    background: black;
+
+  }
+
+  .black-background {
+    background: black;
+  }
+.container {
+display: table;
+width: 100%;
+
+}
+
+.event{
+padding: 5%;
+display: table-cell; 
+}
+
+.table{
+display: table;
+height: 100%;
+width: 80%;
+padding: 0% 10%;
+}
+
+
+
+.table_cell{
+padding: 5%;
+display: table-cell; 
+vertical-align: middle;
+padding: 0;
+}
+
+
+#about-me-flex-box{
+width: 100%;
+display: flex;
+justify-content: space-around;
+align-items: baseline;
+}
+
+
+
+.mobile-container{
+display:none;
+}
+
+.mobile-container.open{
+display:block;
+}
+
+.desktop-container{
+display: none;
+}
+
+.desktop-container.open{
+display: block;
+}
+
+.next_button {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+       color: white !important;
+       background-color: transparent;
+       text-decoration:none;   
+     }
+ 
+     .next_button:hover {
+     
+       color: rgb(208, 208, 208) !important;
+     }
+ 
+     .round {
+       border-radius: 50%;
+     }
+
+
+/**TWO VERSIONS OF THE NAVIGATION BAR!*/
+/** navigation bar **/
+.topnav {
+  background-color: rgb(53, 58, 63);
+  border-style: solid;
+  border-bottom-color:#00AEEF;
+  border-bottom-width: 3px;
+  display: flex;
+  z-index: 5;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 2px;
+  position: fixed;
+  top: 0px;
+  align-items: center;
+  justify-content: space-around;
+}
+ 
+ 
+.topnav-mobile{
+ padding: 4% 0;
+}
+ 
+ .topnav_button, .topnav_logo{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+ .topnav p{
+  color: white;
+  font-size: 25px;
+  position: relative;
+  }
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+}
+ .topnav a:hover,.dropdown:hover .dropbtn, .dropdown:hover .nodropbtn {
+  color: #00AEEF;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+ .dropdown .dropbtn, .dropdown .nodropbtn{
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}
+.dropdown-content  {
+  display: none;
+  position: absolute;
+  background-color: rgba(128, 128, 128, 0.55);
+  width:11%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ }
+ .dropdown-content a{
+  float: none;
+  color: white;
+  padding: 5% 2%;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 2vh;
+}
+ .dropdown:hover .dropdown-content{
+  display: block;
+}
+  /**mobile version of nav bar**/
+  .mobile-btn{
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}
+.choices{
+Z-index: 5;
+background: rgba(0,0,0,0.96);
+position: fixed;
+top: 0;
+left:0;
+width:100%;
+height:100%;
+opacity:0;
+pointer-events: none;
+transition: all 0.25s ease-out;
+}
+.galleries_choices {
+position: relative;
+width: 40%;
+top: 30%;
+margin-left: 30%;
+transform: scale(2)
+}
+.btn{
+ padding: 5% 0;
+ width: 100%;
+ color: black;
+ font-weight:bold;
+ background-color: #00AEEF;
+ border-width: 0;
+ font-family:inherit;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+.choices.open{
+opacity:1;
+pointer-events: all;
+}
+ 
+.mobile-btn{
+   border: none;
+   outline: none;
+   color: white;
+   background-color: inherit;
+   font-family: inherit;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ .mobile-container{
+display:none;
+}
+.mobile-container.open{
+display:block;
+}
+.desktop-container{
+display: none;
+}
+.desktop-container.open{
+display: block;
+}
+ 
+ 
+
+
+
+
+ 
+@media (min-width: 900px) {
+ 
+ 
+ 
+.dropdown .dropbtn, .dropdown .nodropbtn{
+       font-size: 17px;
+     }
+ 
+.mobile-btn{
+       font-size: 25px;
+     }
+ 
+.btn{
+  font-size: 20px;
+
+}
+
+  h1{
+    font-size: 22px;
+  }
+
+
+  
+  .box p{
+    font-size: 2vh;
+  }
+
+  #title{
+    font-size: 4vh; 
+  }
+
+  .next_button{
+    font-size: 10vw;
+  }
+
+
+
+}
+
+</style>
+</head>
+<body>
+  
+ 
+  <!--desktop nav bar-->
+<div class="desktop-container">
+  <div class="topnav">
+  
+    <div class="topnav_logo" style="width: 30%;">
+      <div style="width: 45%">
+            <img class="seaGrantLogo" src="static/images/MIT_MITSG_EqualFocus_Logo_White_large-copy.png" style="max-width: 100%">
+      </div>
+      <div style="width: 45%">
+          <img src="static/images/exhibition_webpages/s2s.png"style="max-width: 100%" >
+      </div>
+      <div  style="width: 10%;">
+         <img src="static/images/dino_drawing.png" style="max-width: 100%">
+      </div>
+    </div>
+  
+    <div class="topnav_button" style="width: 70%">  
+      <div class="dropdown">
+        <a  href="SpacetoSea_mainpage.html"><button class="nodropbtn">Exhibition</button></a>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Gallery</button>
+        <div class="dropdown-content">
+          <a href="SpacetoSea_animal_gallery.html">Marine Life</a>
+          <a href="SpacetoSea_plankton_gallery.html">Plankton</a>
+          <a href="SpacetoSea_satellite_gallery.html">Satellite Images</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="SpacetoSea_about.html"><button class="nodropbtn" >About</button></a>
+     </div>
+      <div class="dropdown">
+        <a href="SpacetoSea_events.html"><button class="nodropbtn">Events</button>
+        </a>
+     </div>
+      <div class="dropdown">
+        <a href="SpacetoSea_blog.html"><button class="nodropbtn" >Blog</button>
+        </a>
+     </div>
+    </div>
+   </div>
+  </div>
+   <!--end of nav bar-->
+  
+  
+  <!--mobile version navigation bar-->
+  
+  <div class="mobile-container">
+  
+    <div class="topnav topnav-mobile">
+  
+      <div class="topnav_logo" style="width: 30%;">
+        <div style="width: 45%">
+              <img class="seaGrantLogo" src="static/images/MIT_MITSG_EqualFocus_Logo_White_large-copy.png" style="max-width: 100%">
+        </div>
+        <div style="width: 45%">
+            <img src="static/images/exhibition_webpages/s2s.png"style="max-width: 100%" >
+        </div>
+        <div  style="width: 10%;">
+           <img src="static/images/dino_drawing.png" style="max-width: 100%">
+        </div>
+      </div>
+    
+      <div class="topnav_button" style="width: 70%">  
+        <div>
+          <a  href="SpacetoSea_mainpage.html"><button class="mobile-btn">Exhibition</button></a>
+        </div>
+        <div>
+          <button class="mobile-btn" onclick="createChoices()">Gallery</button>
+        </div>
+        <div>
+          <a href="SpacetoSea_about.html"><button class="mobile-btn" >About</button></a>
+       </div>
+        <div>
+          <a href="SpacetoSea_events.html"><button class="mobile-btn">Events</button>
+          </a>
+       </div>
+        <div>
+          <a href="SpacetoSea_blog.html"><button class="mobile-btn" >Blog</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+  
+  </div>
+ <!--mobile nav ends here-->
+  
+  
+  
+  
+  
+  
+  
+  
+ <!--choices-->
+ <div class="choices">
+  <div class="galleries_choices">
+  <a href="SpacetoSea_animal_gallery.html">
+  <button type="button" class="btn btn-info" >&nbsp;&nbsp;&nbsp;&nbsp;Marine Life &nbsp;&nbsp;&nbsp;</button>
+  </a>
+  <br><br>
+  <a href="SpacetoSea_plankton_gallery.html">
+  <button type="button" class="btn btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Plankton&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</button>
+  </a>
+  <br><br>
+  <a href="SpacetoSea_satellite_gallery.html">
+  <button type="button" class="btn btn-info">Satellite Images</button>
+  </a>
+  </div>
+ </div>
+ 
+ 
+ 
+
+    <h1 id="title" style="text-align: center; padding-top: 15%;"><span style="color: rgb(236, 0, 140)">|</span> Upcoming Events <span style="color:rgb(236, 0, 140)">|</span></h1>
+
+
+    <!--desktop version-->
+    <div class="desktop-container">
+    <div class="box">
+      <h1 style="color:white; text-decoration: none;"><span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>
+        Exploring Massachusetts and Stellwagen Bank National Marine Sanctuary with Keith Ellenbogen
+      </h1>
+
+      <div class="table">
+         <div class="table_cell" style="width: 50%;">
+           <img src="static/images/exhibition_webpages/upcoming -1.png" style="max-width: 60%">
+         </div>
+         <div class="table_cell" style="width: 50%;">
+              <p>New England Aquarium, Lowell lecture, Simons Theatre. 1 Central Wharf Boston, MA 02110 <br><br>
+              Date: Wednesday, June 22, 2022<br>
+              Time: 6:30 PM - 7:30 PM<br>
+              <br><br>
+              <a href="https://seagrant.mit.edu/2022/06/13/opening-june-22-on-neaqs-central-wharf-space-to-sea-a-photographic-journey-into-stellwagen-bank-national-marine-sanctuary/" style="color:#92dbf6; text-decoration:none;">
+              LEARN MORE |
+              </a>
+              <a href="http://support.neaq.org/site/Calendar?id=108525&view=Detail" style="color:#92dbf6; text-decoration:none;">
+              CLICK TO REGISTER
+              </a>
+             </p>
+         </div>
+      
+      </div>
+    </div>
+
+
+    <div class="box">
+        <h1 style="color:white; " ><span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>
+          Ocean Photography: Discovering New England Marine Life through the Eyes of the American Lobster
+        </h1>
+        
+          <div class="table">
+            <div class="table_cell" style="width: 50%;">
+              <img src="static/images/exhibition_webpages/upcoming -2.png" style="max-width: 60%">
+            </div>
+            <div class="table_cell" style="width: 50%;">
+                 <p>Wells National Estuarine <br>Research Reserve <br>
+                  Mather Auditorium, 342 Laudholm Farm Rd, Wells, ME 04090 <br><br>
+                  Date: Thursday, July 21, 2022 <br> TIme: 12:00pm – 1:00pm <br>
+                  <br><br>
+                 <a href="https://www.wellsreserve.org/event/14795/ocean-photography-discovering-new-england-marine-life-through-the-eyes-of-the-american-lobster" style="color:#92dbf6; text-decoration:none;">
+                  CLICK TO REGISTER</a>
+                 </a>
+                </p>
+            </div>
+          </div>
+      </div>
+    </div>
+  
+  
+  <!--mobile view-->
+    <div class="mobile-container">
+      <div class="mobile-box" id="event_one">
+        <h1 style="color:white; text-decoration: none; "><span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>
+          Exploring Massachusetts and Stellwagen Bank National Marine Sanctuary with Keith Ellenbogen
+        </h1>
+  
+        <img src="static/images/exhibition_webpages/upcoming -1.png" style="width: 60%; padding: 0 20%;">
+        <br><br>
+        <p>New England Aquarium, Lowell lecture, Simons Theatre. 1 Central Wharf Boston, MA 02110 <br><br>
+          Date: Wednesday, June 22, 2022<br>
+          Time: 6:30 PM - 7:30 PM<br>
+          <br><br>
+          <a href="https://seagrant.mit.edu/2022/06/13/opening-june-22-on-neaqs-central-wharf-space-to-sea-a-photographic-journey-into-stellwagen-bank-national-marine-sanctuary/" style="color:#92dbf6; text-decoration:none;">
+          LEARN MORE &
+          </a>
+          <a href="http://support.neaq.org/site/Calendar?id=108525&view=Detail" style="color:#92dbf6; text-decoration:none;">
+         REGISTER
+          </a>
+         </p>
+  
+       
+          <a class="next_button round" href='#event_second'>&#65086;</a>
+  
+                
+      </div>
+  
+      <div class="empty-box" style="height:40vh; background: black;"></div>
+  
+      <div class="mobile-box " id="event_second">
+    
+        <h1 style="color:white"><span style="color: transparent;  text-shadow: 0 0 0 rgb(236, 0, 140);"> &#9726; </span>
+          Ocean Photography: Discovering New England Marine Life through the Eyes of the American Lobster
+        </h1>
+      <br><br>
+      <img src="static/images/exhibition_webpages/upcoming -2.png" style="max-width: 60%">
+      <p>Wells National Estuarine <br>Research Reserve <br>
+              Mather Auditorium, 342 Laudholm Farm Rd, Wells, ME 04090 <br><br>
+              Date: Thursday, July 21, 2022 <br> TIme: 12:00pm – 1:00pm <br>
+      <br><br>
+      <a href="https://www.wellsreserve.org/event/14795/ocean-photography-discovering-new-england-marine-life-through-the-eyes-of-the-american-lobster" style="color:#92dbf6; text-decoration:none;">
+              CLICK TO REGISTER</a>
+      </p>
+       
+      </div>
+  
+    </div>
+  
+  
+  </body>
+  
+  <script>
+  
+  
+  var screen_height=window.innerHeight;
+  var screen_width=window.innerWidth;
+  console.log(screen_height);
+  console.log(screen_width);
+  if (screen_width<1000){
+    console.log("it's a mobile")
+    var mobile = document.getElementsByClassName("mobile-container");
+    for (var i=0; i<mobile.length; i++)
+    {
+     
+      mobile[i].classList.add("open");
+    }
+  }
+  else{
+    console.log("it's a desktop")
+    var desktop = document.getElementsByClassName("desktop-container");
+    for (var i=0; i<desktop.length; i++)
+    {
+      desktop[i].classList.add("open");
+    }
+  }
+  
+  //choices window
+   
+  function createChoices()
+   {
+     const choices = document.querySelector('.choices');
+     choices.classList.add('open');
+     console.log(choices);
+   }
+   
+       //Click on any space other than the picture closes the choices window
+       const choices = document.querySelector('.choices');
+     //e stands for the event, e.target is what we clicked on
+      choices.addEventListener("click", (e)=>{
+      if (e.target.classList.contains('choices')){
+        choices.classList.remove('open');
+      }
+     })
+  
+  </script>
+  </html>

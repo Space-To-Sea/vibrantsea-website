@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+html {
+  background-color: black;
+  min-height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+body {
+font-family: 'Work Sans', sans-serif;
+padding:0;
+margin:0;
+height: 100vh;
+overflow-x: hidden;
+overflow-y: auto;
+perspective: 1px;
+transform-style: preserve-3d;
+}
+p{
+color: rgb(255, 255, 255);
+}
+
+
+  h1{
+    color: white;
+    text-align: left;
+    
+  }
+
+  .box{
+    width: 100%;
+    padding-left: 13%;
+    padding-right: 13%;
+    padding-top:2%;
+    padding-bottom:2%;
+    object-fit: contain;
+    margin-bottom: 0;
+    z-index: 4;
+    position: relative;
+  }
+
+  .image-in-between{
+    padding:0;
+    margin: 0;
+    z-index: -1;
+    transform: translateZ(-1px) scale(2)
+
+
+  }
+
+  .emptyspace {
+   height: 90vh;
+ }
+
+ .half-emptyspace{
+  height: 60vh;
+ }
+ 
+
+
+  .black-background {
+    background: black;
+  }
+
+  .dark-background {
+    background: rgba(0, 0, 0, 0.291);
+  }
+  .blue-background{
+    background:#2cc2f841;
+ 
+  }
+
+
+  * {
+box-sizing: border-box;
+  }
+
+#artist_statement{
+    width: 100%; 
+    z-index: 4;   
+  }
+ 
+#artist_statement h1{
+    text-align: left; 
+  }
+
+
+#about-me-flex-box{
+width: 100%;
+display: flex;
+justify-content: space-around;
+align-items: baseline;
+}
+
+#about-me-part picture{
+  flex-shrink: 3;
+}
+
+
+.table{
+display: table;
+width: 100%;
+align-items: baseline;
+
+
+}
+
+.table_cell{
+display: table-cell; 
+vertical-align: middle;
+}
+
+.logos{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo{
+  float: left;
+}
+
+
+/**TWO VERSIONS OF THE NAVIGATION BAR!*/
+/** navigation bar **/
+.topnav {
+  background-color: rgb(53, 58, 63);
+  border-style: solid;
+  border-bottom-color:#00AEEF;
+  border-bottom-width: 3px;
+  display: flex;
+  z-index: 5;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 2px;
+  position: fixed;
+  top: 0px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.topnav-mobile{
+  padding: 4% 0;
+}
+ .topnav_button, .topnav_logo{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+ .topnav p{
+  color: white;
+  font-size: 25px;
+  position: relative;
+  }
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+}
+ .topnav a:hover,.dropdown:hover .dropbtn, .dropdown:hover .nodropbtn {
+  color: #00AEEF;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+ .dropdown .dropbtn, .dropdown .nodropbtn{
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}
+.dropdown-content  {
+  display: none;
+  position: absolute;
+  background-color: rgba(128, 128, 128, 0.55);
+  width:11%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ }
+ .dropdown-content a{
+  float: none;
+  color: white;
+  padding: 5% 2%;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 2vh;
+}
+ .dropdown:hover .dropdown-content{
+  display: block;
+}
+  /**mobile version of nav bar**/
+  .mobile-btn{
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}
+.choices{
+Z-index: 5;
+background: rgba(0,0,0,0.96);
+position: fixed;
+top: 0;
+left:0;
+width:100%;
+height:100%;
+opacity:0;
+pointer-events: none;
+transition: all 0.25s ease-out;
+}
+.galleries_choices {
+position: relative;
+width: 40%;
+top: 30%;
+margin-left: 30%;
+/**NEED TO CHANGE LATER**/
+transform: scale(2)
+}
+.btn{
+ padding: 5% 0;
+ width: 100%;
+ color: black;
+ font-weight:bold;
+ background-color: #00AEEF;
+ border-width: 0;
+ font-family:inherit;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+.choices.open{
+opacity:1;
+pointer-events: all;
+}
+ 
+.mobile-btn{
+   border: none;
+   outline: none;
+   color: white;
+   background-color: inherit;
+   font-family: inherit;
+   margin: 0;
+   padding: 0;
+   
+ }
+ 
+ .mobile-container{
+display:none;
+}
+.mobile-container.open{
+display:block;
+}
+.desktop-container{
+display: none;
+}
+.desktop-container.open{
+display: block;
+}
+ 
+ 
+
+
+
+
+ 
+@media (min-width: 900px) {
+ 
+ 
+ 
+.dropdown .dropbtn, .dropdown .nodropbtn{
+       font-size: 17px;
+     }
+ 
+.mobile-btn{
+       font-size: 25px;
+     }
+
+.btn{
+  font-size: 20px;
+
+}
+
+body{
+  letter-spacing: 2px;
+}
+
+h1{
+  font-size: 40px;
+    margin: 0;
+    padding: 3% 0%;
+}
+
+.box p{
+    font-size: 25px;
+  }
+
+.contact_table{
+ width: 70%; margin-left: 15%;
+}
+  
+.table_cell{
+ padding-top: 5%;
+ padding-left: 5%;
+ padding-right: 5%;
+font-size: 20px}
+
+.logos{
+  width: 100%;
+  margin-top: 20px;
+  
+  padding: 5% 15%;
+}
+.logo{
+padding: 0 50px;
+width: 25%;
+}
+
+      }
+
+
+ </style>
+</head>
+
+
+<body>
+
+ 
+  <!--desktop nav bar-->
+  <div class="desktop-container">
+    <div class="topnav">
+    
+      <div class="topnav_logo" style="width: 30%;">
+        <div style="width: 45%">
+              <img class="seaGrantLogo" src="static/images/MIT_MITSG_EqualFocus_Logo_White_large-copy.png" style="max-width: 100%">
+        </div>
+        <div style="width: 45%">
+            <img src="static/images/exhibition_webpages/s2s.png"style="max-width: 100%" >
+        </div>
+        <div  style="width: 10%;">
+           <img src="static/images/dino_drawing.png" style="max-width: 100%">
+        </div>
+      </div>
+    
+      <div class="topnav_button" style="width: 70%">  
+        <div class="dropdown">
+          <a  href="SpacetoSea_mainpage.html"><button class="nodropbtn">Exhibition</button></a>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Gallery</button>
+          <div class="dropdown-content">
+            <a href="SpacetoSea_animal_gallery.html">Marine Life</a>
+            <a href="SpacetoSea_plankton_gallery.html">Plankton</a>
+            <a href="SpacetoSea_satellite_gallery.html">Satellite Images</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="SpacetoSea_about.html"><button class="nodropbtn" >About</button></a>
+       </div>
+        <div class="dropdown">
+          <a href="SpacetoSea_events.html"><button class="nodropbtn">Events</button>
+          </a>
+       </div>
+        <div class="dropdown">
+          <a href="SpacetoSea_blog.html"><button class="nodropbtn" >Blog</button>
+          </a>
+       </div>
+      </div>
+     </div>
+    </div>
+     <!--end of nav bar-->
+    
+    
+    <!--mobile version navigation bar-->
+    
+    <div class="mobile-container">
+    
+      <div class="topnav topnav-mobile">
+    
+        <div class="topnav_logo" style="width: 30%;">
+          <div style="width: 45%">
+                <img class="seaGrantLogo" src="static/images/MIT_MITSG_EqualFocus_Logo_White_large-copy.png" style="max-width: 100%">
+          </div>
+          <div style="width: 45%">
+              <img src="static/images/exhibition_webpages/s2s.png"style="max-width: 100%" >
+          </div>
+          <div  style="width: 10%;">
+             <img src="static/images/dino_drawing.png" style="max-width: 100%">
+          </div>
+        </div>
+      
+        <div class="topnav_button" style="width: 70%">  
+          <div>
+            <a  href="SpacetoSea_mainpage.html"><button class="mobile-btn">Exhibition</button></a>
+          </div>
+          <div>
+            <button class="mobile-btn" onclick="createChoices()">Gallery</button>
+          </div>
+          <div>
+            <a href="SpacetoSea_about.html"><button class="mobile-btn" >About</button></a>
+         </div>
+          <div>
+            <a href="SpacetoSea_events.html"><button class="mobile-btn">Events</button>
+            </a>
+         </div>
+          <div>
+            <a href="SpacetoSea_blog.html"><button class="mobile-btn" >Blog</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+    
+    </div>
+   <!--mobile nav ends here-->
+    
+    
+    
+    
+    
+    
+    
+    
+   <!--choices-->
+   <div class="choices">
+    <div class="galleries_choices">
+    <a href="SpacetoSea_animal_gallery.html">
+    <button type="button" class="btn btn-info" >&nbsp;&nbsp;&nbsp;&nbsp;Marine Life &nbsp;&nbsp;&nbsp;</button>
+    </a>
+    <br><br>
+    <a href="SpacetoSea_plankton_gallery.html">
+    <button type="button" class="btn btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Plankton&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</button>
+    </a>
+    <br><br>
+    <a href="SpacetoSea_satellite_gallery.html">
+    <button type="button" class="btn btn-info">Satellite Images</button>
+    </a>
+    </div>
+   </div>
+   
+   
+
+
+
+<div class="desktop-container">
+<div class="box black-background" style="padding-top:10%">
+  <h1 style="text-align:center"><span style="color:#00AEEF">|</span> KEITH ELLENBOGEN <span style="color:#00AEEF">|</span></h1>
+</div>
+ <div class="box black-background" id="about-me">
+  
+
+ 
+   <div id="about-me-flex-box" >
+     <div class="table_cell">
+       <p style="margin: 0">A celebrated underwater photographer, Keith Ellenbogen is the
+       recipient of an Ernest F. Hollings Ocean Awareness Award for his work that showcases the dynamic marine wildlife off the coast of Massachusetts and within Stellwagen Bank National Marine Sanctuary. Keith is an Associate Professor of Photography at SUNY/Fashion Institute of Technology; Visiting Artist at Massachusetts Institute of Technology / MIT Sea Grant; Senior Fellow at The International League 
+       of Conservation Photographers; Fellow, at The Explorers Club; and an Affiliate Partner, Mission Blue – A Sylvia Earle Alliance. Keith has spent over four years capturing the beauty and drama of marine life for this project. Diving with marine mammals is normally prohibited. Keith holds a NOAA Marine Mammal Photography Permit, which allows him unique access to photograph marine mammals.
+ ​      </p>
+     </div> 
+
+      <div class="table_cell" style="min-width: 45%">
+        <br> <img src="static/images/keith/KE_6063969.jpg" style="max-width: 100%"> 
+     </div>
+
+    </div>
+ </div>
+
+
+</div>
+
+<div class="mobile-container">
+  <div class="box black-background" style="padding-top:15%">
+    <h1 style="text-align:center"><span style="color:#00AEEF">|</span> KEITH ELLENBOGEN <span style="color:#00AEEF">|</span></h1>
+  </div>
+ <div class="box black-background" >
+   <img src="static/images/keith/KE_6063969.jpg" style="max-width: 100%"> 
+   <p style="margin: 0"><br><br>A celebrated underwater photographer, Keith Ellenbogen is the
+   recipient of an Ernest F. Hollings Ocean Awareness Award for his work that showcases the dynamic marine wildlife off the coast of Massachusetts and within Stellwagen Bank National Marine Sanctuary. Keith is an Associate Professor of Photography at SUNY/Fashion Institute of Technology; Visiting Artist at Massachusetts Institute of Technology / MIT Sea Grant; Senior Fellow at The International League 
+   of Conservation Photographers; Fellow, at The Explorers Club; and an Affiliate Partner, Mission Blue – A Sylvia Earle Alliance. Keith has spent over four years capturing the beauty and drama of marine life for this project. Diving with marine mammals is normally prohibited. Keith holds a NOAA Marine Mammal Photography Permit, which allows him unique access to photograph marine mammals.
+​    </p>
+ </div> 
+
+   
+</div>
+
+
+
+<div class="box dark-background" id="contact" style="padding: 0 5%">
+
+  <h1 style="text-align:center; color:#00AEEF; font-size:25px; padding-top:5%;"> CONTACT </h1>
+  <div class="table contact_table">
+     <div class="table_cell" style="width: 50%; padding: 0" >
+      <p style="color:#92dbf6;">THE ARTIST</p>
+     <p>
+       Keith Ellenbogen<br>
+       Project Lead <br>
+       646-234-9473<br>
+       <a href="mailto:kellenbogen@gmail.com>" style="text-decoration:none; color:white"> kellenbogen@gmail.com<br></a>
+       <a href="http://www.keithellenbogen.com"; style="text-decoration: none; color: white;">
+       www.keithellenbogen.com </a></p>
+     </div> 
+
+
+
+   <div class="table_cell" style="width: 50%;padding: 0" >
+    <p style="color:#92dbf6; ">MIT SEA GRANT</p>
+    <p>Lily Keyes<br>
+      MITSG Communications Specialist<br>
+      617-253-3461<br>
+      <a href="mailto:kellenbogen@gmail.com>" style="text-decoration:none; color:white"> keyes@mit.edu<br></a>
+    </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<div class="image-in-between">
+  <img src="static/images/photography/plankton/KE_6185545-88 Stack HR.jpg" style="width:100%;" >
+</div>
+
+ <div class="box black-background" id="artist_statement">
+  <h1><span style="color:rgb(236, 0, 140)">｜</span> ARTIST STATEMENT</h1>
+  <p>​
+    Descending into the cold waters, I sense the currents and wildlife moving in three-dimensional space. The open ocean is vast, appearing mostly empty with pockets of life that frequently thrive just beyond the range of underwater visibility.  Instead of hiking boots, backpacks, and binoculars, it is fins, masks, wetsuits, snorkels, and SCUBA diving equipment that allow me to explore the underwater world. My movements, my heartbeat, and ability to navigate within a liquid medium are among the skills I have developed throughout my career preparing for expected and unexpected ocean encounters. 
+    <br><br>
+    Each portrait enables the viewer to imagine their own personal encounter. Descend with Keith as he photographs a torpedo ray at a depth of a 100ft that is capable of emitting electricity to stun or kill its prey. Freedive with a 17ft, 3,000lb. great white shark. Explore the microscopic world of photosynthetic dinoflagellates, like the three Ceratium featured on the front panel. Join Keith and a network of scientists, policy makers, and ocean conservationists working to protect endangered species such as the North Atlantic right whale and Kemp’s ridley sea turtles.
+  </p>
+</div>
+
+<div class=" image-in-between">
+  <img src="static/images/photography/plankton/080519_SBNMS Plankton_0188 1.jpg" style="width:100%;" >
+</div>
+
+ 
+
+<!--desktop-->
+<div class="desktop-container">
+
+<div class="box table black-background">
+  <div class="table_cell">
+    <h1 style="font-size: 4vh; color:#00AEEF">ABOUT THE HOLLINGS OCEAN AWARENESS AWARD</h1>
+    <p>The National Marine Sanctuary Foundation Ernest F. Hollings Ocean Awareness Award aims to increase stewardship of natural and cultural resources in America’s neighboring oceans and Great Lakes. Established in 2005, the award reflects the National Marine Sanctuary Foundation’s commitment to the legacy of U.S. Senator Ernest F. Hollings, who authored an extraordinary range of laws to safeguard America’s oceans and coasts. To date, the Foundation has awarded nearly $2 million to more than 60 groups for research, conservation, education and outreach projects supporting the National Marine Sanctuary System and healthy oceans.</p>
+  </div>
+  <div class="table_cell">
+    <h1 style="font-size: 4vh; color:#00AEEF">ABOUT MIT SEA GRANT</h1>
+    <p>For over 40 years, MIT Sea Grant has brought the expertise of the Massachusetts Institute of Technology to bear on ocean-related challenges through research, education and outreach. A Federal-Institute partnership funded by the National Oceanic and Atmospheric Administration, MIT Sea Grant is dedicated to address challenges to our fragile coastal and marine resources and the people who depend on them and this is greatly facilitated by increased ocean awareness through connecting arts and sciences. </p>
+  </div>
+</div>
+
+<div class=" box table black-background">
+  <div class="table_cell"> 
+    <h1 style="font-size: 4vh; color:#00AEEF">About Stellwagen Bank National Marine Sanctuary</h1>
+    <p>Stellwagen Bank National Marine Sanctuary is located in our backyard, just 25 nautical miles off the coast of Boston, between Cape Ann and Cape Cod. Similar to our national parks, marine sanctuaries are federally designated areas that protect important natural marine environments and historic resources, while hosting extraordinary recreational activities such as whale watching, fishing, bird watching and shipwreck diving.</p>
+  </div>
+
+  <div class="table_cell">
+    <h1 style="font-size: 4vh; color:#00AEEF">About the National Marine Sanctuary Foundation</h1>
+    <p>The National Marine Sanctuary Foundation is the chief non-profit partner for our National Marine Sanctuary System. The Foundation focuses on conserving areas of national significance in America’s neighboring oceans and Great Lakes by engaging citizens and communities in education, research, and on-the-ground conservation work.</p>
+  </div>
+</div>
+
+</div>
+
+
+<!--mobile-->
+<div class="mobile-container">
+
+<div class="box  black-background">
+  <h1 style="font-size: 4vh; color:#00AEEF">ABOUT THE HOLLINGS OCEAN AWARENESS AWARD</h1>
+  <p>The National Marine Sanctuary Foundation Ernest F. Hollings Ocean Awareness Award aims to increase stewardship of natural and cultural resources in America’s neighboring oceans and Great Lakes. Established in 2005, the award reflects the National Marine Sanctuary Foundation’s commitment to the legacy of U.S. Senator Ernest F. Hollings, who authored an extraordinary range of laws to safeguard America’s oceans and coasts. To date, the Foundation has awarded nearly $2 million to more than 60 groups for research, conservation, education and outreach projects supporting the National Marine Sanctuary System and healthy oceans.</p>
+  <br> <br>
+  <h1 style="font-size: 4vh; color:#00AEEF">ABOUT MIT SEA GRANT</h1>
+  <p>For over 40 years, MIT Sea Grant has brought the expertise of the Massachusetts Institute of Technology to bear on ocean-related challenges through research, education and outreach. A Federal-Institute partnership funded by the National Oceanic and Atmospheric Administration, MIT Sea Grant is dedicated to address challenges to our fragile coastal and marine resources and the people who depend on them and this is greatly facilitated by increased ocean awareness through connecting arts and sciences. </p>
+  <br> <br>
+  <h1 style="font-size: 4vh; color:#00AEEF">About Stellwagen Bank National Marine Sanctuary</h1>
+  <p>Stellwagen Bank National Marine Sanctuary is located in our backyard, just 25 nautical miles off the coast of Boston, between Cape Ann and Cape Cod. Similar to our national parks, marine sanctuaries are federally designated areas that protect important natural marine environments and historic resources, while hosting extraordinary recreational activities such as whale watching, fishing, bird watching and shipwreck diving.</p>
+  <br> <br>
+  <h1 style="font-size: 4vh; color:#00AEEF">About the National Marine Sanctuary Foundation</h1>
+  <p>The National Marine Sanctuary Foundation is the chief non-profit partner for our National Marine Sanctuary System. The Foundation focuses on conserving areas of national significance in America’s neighboring oceans and Great Lakes by engaging citizens and communities in education, research, and on-the-ground conservation work.</p>
+
+</div>
+</div>
+
+
+<div class="box blue-background logos">
+  <div class="logo"><img src="static/images/exhibition_webpages/logos/2022_MIT_Sea_Grant_Logo_White.png" style="width: 100%"></div>
+  <div class="logo"><img src="static/images/exhibition_webpages/logos/NEAq_Logo_PMS 286.png" style="width: 100%"></div>
+  <div class="logo"><img src="static/images/exhibition_webpages/logos/NMSF_Logo_RGB.png" style="width: 100%"></div>
+  <div class="logo"><img src="static/images/exhibition_webpages/logos/noaa-emblem-cmyk-2022 (1).png" style="width: 100%"></div>
+ </div>
+
+
+
+
+<script>
+
+
+
+var screen_height=window.innerHeight;
+var screen_width=window.innerWidth;
+console.log(screen_height);
+console.log(screen_width);
+if (screen_width<990){
+ console.log("it's a mobile")
+ var mobile = document.getElementsByClassName("mobile-container");
+ for (var i=0; i<mobile.length; i++)
+ {
+ 
+   mobile[i].classList.add("open");
+ }
+}
+else{
+ console.log("it's a desktop")
+ var desktop = document.getElementsByClassName("desktop-container");
+ for (var i=0; i<desktop.length; i++)
+ {
+   desktop[i].classList.add("open");
+ }
+ 
+}
+//choices window
+ 
+function createChoices()
+ {
+   const choices = document.querySelector('.choices');
+   choices.classList.add('open');
+   console.log(choices);
+ }
+ 
+     //Click on any space other than the picture closes the choices window
+     const choices = document.querySelector('.choices');
+   //e stands for the event, e.target is what we clicked on
+    choices.addEventListener("click", (e)=>{
+    if (e.target.classList.contains('choices')){
+      choices.classList.remove('open');
+    }
+   })
+
+
+</script>
+
+
+</body>
+</html>
+ 

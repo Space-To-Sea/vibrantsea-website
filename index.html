@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stellwagen Bank National Marine Sanctuary Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="static/js/wheel-zoom.js" type="text/javascript"></script>
+    <script src="static/js/js_images.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="static/css/images_css.css" />
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="static/css/navbar_css.css" />
+  </head>
+  <body>
+    <script type="text/javascript">
+      navBar();
+    </script>
+
+    <div id="main-container" class="container-fluid" style="overflow: hidden">
+      <script type="text/javascript">
+        var iniFolder = "01.14.2017";
+        var iniName = "truecolor";
+        var iniTitle = "Ocean Phytoplankton: Truecolor<br>Massachusetts, USA";
+        var iniAltitude = "200 km";
+
+        var container_text = document.createElement("div");
+        container_text.classList.add("container-text");
+        var container = document.createElement("div");
+        container.classList.add("container");
+        var h6 = document.createElement("h6");
+        h6.id = "title";
+        h6.style.lineHeight = "20px;";
+        h6.innerHTML = iniTitle;
+        var flex_container = document.createElement("div");
+        flex_container.classList.add("flex-container");
+        container.appendChild(h6);
+        container_text.appendChild(container);
+        container_text.appendChild(flex_container);
+        document.getElementById("main-container").appendChild(container_text);
+
+        $.each(names, function (i) {
+          var container = document.createElement("div");
+          container.classList.add(names[i].shortname + "-container");
+
+          var image = document.createElement("img");
+          image.classList.add("img");
+          image.style.width = "100%";
+          image.style.cursor = "pointer";
+          image.id = names[i].shortname + "_thumb";
+          image.src =
+            "static/images/reduced/thumbnails/" +
+            iniFolder +
+            "/" +
+            names[i].shortname +
+            ".jpg";
+          image.alt = names[i].longname + " Thumbnail";
+
+          var overlay = document.createElement("div");
+          overlay.classList.add("overlay");
+          overlay.onclick = function () {
+            setImage(names[i].shortname, names[i].longname);
+          };
+
+          var text = document.createElement("div");
+          text.classList.add("text");
+          text.innerHTML = names[i].longname;
+
+          overlay.appendChild(text);
+          container.appendChild(image);
+          container.appendChild(overlay);
+          flex_container.appendChild(container);
+        });
+
+        var myWindow = document.createElement("div");
+        myWindow.classList.add("container-fluid");
+        myWindow.id = "myWindow";
+        var altitude = document.createElement("div");
+        altitude.id = "altitude";
+        altitude.innerHTML = "Camera Altitude: " + iniAltitude;
+        var rotate2 = document.createElement("div");
+        rotate2.classList.add("rotate2");
+        rotate2.innerHTML =
+          '<input data-zoom-range type="range" class="slider">';
+
+        var myContent = document.createElement("div");
+        myContent.id = "myContent";
+        var image = document.createElement("img");
+        image.classList.add("img");
+        image.src =
+          "static/images/original/" + iniFolder + "/" + iniName + ".jpg";
+        image.id = "zoom";
+        image.alt = iniFolder;
+        image.style.position = "relative";
+        var border = document.createElement("img");
+        border.classList.add("img");
+        border.id = "border";
+        border.src = "static/images/border.png";
+        border.alt = "border";
+        border.style.position = "absolute";
+        border.style.top = 0;
+        var sbnms_label = document.createElement("h1");
+        sbnms_label.id = "sbnms_label";
+        sbnms_label.innerHTML = "Stellwagen Bank<br>National Marine Sanctuary";
+        sbnms_label.style.textAlign = "center";
+
+        myContent.appendChild(image);
+        myContent.appendChild(border);
+        myContent.appendChild(sbnms_label);
+
+        myWindow.appendChild(altitude);
+        myWindow.appendChild(rotate2);
+        myWindow.appendChild(myContent);
+        document.getElementById("main-container").appendChild(myWindow);
+
+        var colorbar = document.createElement("img");
+        colorbar.id = "colorbar";
+        colorbar.classList.add("img");
+        colorbar.style.width = 0;
+        colorbar.alt = "Color Bar";
+        var h4 = document.createElement("h4");
+        h4.id = "colorbar_name";
+        h4.classList.add("rotate");
+
+        document.getElementById("main-container").appendChild(colorbar);
+        document.getElementById("main-container").appendChild(h4);
+
+        var timeline_container = document.createElement("div");
+        timeline_container.classList.add("timeline-container");
+        var timeline_buttons = document.createElement("div");
+        timeline_buttons.classList.add("timeline-buttons");
+
+        $.ajax({
+          type: "GET",
+          url: "slides.json",
+          dataType: "json",
+          success: function (json) {
+            var folders = [...new Set(json.map((x) => x.src_folder))];
+            $.each(folders, function (i) {
+              var dateArray = folders[i].split(".");
+              var dateDisplay =
+                months[Number(dateArray[0]) - 1].longname.substring(0, 3) +
+                " " +
+                parseInt(dateArray[1], 10) +
+                ", " +
+                dateArray[2];
+              var timeline_button = document.createElement("button");
+              timeline_button.classList.add("button");
+              timeline_button.onclick = function () {
+                var btns = document.getElementsByClassName("button");
+                $.each(btns, function (i) {
+                  btns[i].className = "button";
+                  timeline_button.classList.add("activebtn");
+                });
+                setFolder(folders[i], iniName, dateDisplay);
+              };
+              if (i === 0) {
+                //timeline_button.classList.add("activebtn");
+                timeline_button.id = "first";
+              }
+              timeline_button.innerHTML = dateDisplay;
+              timeline_buttons.appendChild(timeline_button);
+            });
+            timeline_container.appendChild(timeline_buttons);
+            document
+              .getElementById("main-container")
+              .appendChild(timeline_container);
+          },
+        });
+      </script>
+    </div>
+  </body>
+</html>

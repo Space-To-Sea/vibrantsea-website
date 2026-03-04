@@ -1,0 +1,356 @@
+body {
+  background-color: rgb(2, 17, 27) !important;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: Helvetica;
+  text-size-adjust: auto;
+}
+html {
+  font-size: 16px !important;
+}
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+  }
+}
+header {
+  background-color: #2b2d2f;
+  color: white;
+  font-family: Helvetica;
+}
+nav {
+  position: fixed;
+  font-family: Helvetica;
+  font-size: medium;
+  padding: 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.center {
+  text-align: center;
+}
+/* Title and Thumbnails*/
+.container-text {
+  height: auto;
+  position: fixed;
+  right: 0.25%;
+  bottom: 0.25%;
+  z-index: 4;
+  border-radius: 15px;
+  color: white;
+  background-color: rgba(2, 17, 27, 0.7) !important;
+  padding: 10px;
+  text-align: left;
+  right: 10px;
+  bottom: 10px;
+  width: 50%;
+  max-width: 530px;
+  line-height: 2px;
+}
+.truecolor-container {
+  position: relative;
+  width: 16%;
+  cursor: pointer;
+}
+.chlor_a-container {
+  position: relative;
+  width: 16%;
+  left: 5px;
+  cursor: pointer;
+}
+.diatoms-container {
+  position: relative;
+  width: 16%;
+  left: 10px;
+  cursor: pointer;
+}
+.dinoflagellates-container {
+  position: relative;
+  width: 16%;
+  left: 15px;
+  cursor: pointer;
+}
+.greenalgae-container {
+  position: relative;
+  width: 16%;
+  left: 20px;
+  cursor: pointer;
+}
+.prymnesiophytes-container {
+  /*haptophytes*/
+  position: relative;
+  width: 16%;
+  left: 25px;
+  cursor: pointer;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(2, 17, 27, 0.5);
+  z-index: 9;
+}
+.truecolor-container:hover .overlay {
+  opacity: 1;
+}
+.chlor_a-container:hover .overlay {
+  opacity: 1;
+}
+.diatoms-container:hover .overlay {
+  opacity: 1;
+}
+.dinoflagellates-container:hover .overlay {
+  opacity: 1;
+}
+.greenalgae-container:hover .overlay {
+  opacity: 1;
+}
+.prymnesiophytes-container:hover .overlay {
+  /*haptophytes*/
+  opacity: 1;
+}
+.text {
+  color: white;
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/*Timeline*/
+.timeline-container {
+  width: 44%;
+  height: 35px;
+  position: fixed;
+  left: 3%;
+  bottom: 2%;
+  overflow-y: hidden;
+  z-index: 6;
+  padding: 0;
+  overflow-x: scroll;
+  background-color: rgba(2, 17, 27, 0.7);
+  border-radius: 10px;
+}
+.button {
+  transition-duration: 0.3s;
+  cursor: pointer;
+  text-align: center;
+  background: rgba(255, 255, 255, 0);
+  border: 0px solid white;
+  color: white;
+  z-index: 5;
+  outline: none;
+}
+.button:hover {
+  background-color: lightgray;
+  color: #2b2d2f;
+  border: none;
+  outline: none;
+}
+.activebtn,
+.button:hover {
+  background-color: lightgray;
+  color: #2b2d2f;
+}
+ul#menu li {
+  display: inline;
+}
+.timeline-container::-webkit-scrollbar {
+  width: 100%;
+  height: 10px;
+  background: transparent repeat-y;
+}
+.timeline-container::-webkit-scrollbar-track {
+  background-color: rgb(19, 19, 107);
+  border-radius: 15px;
+}
+.timeline-container::-webkit-scrollbar-thumb {
+  background: rgb(219, 188, 50);
+  border-radius: 3px;
+}
+
+/*Main Image Zoom*/
+#myWindow {
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#myContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+#myContent img {
+  display: block;
+  width: auto;
+  height: auto;
+  margin: auto;
+  padding: 0;
+  align-self: center;
+  flex-shrink: 0;
+}
+#myContent div {
+  width: 100%;
+  position: absolute;
+  font-size: 80px;
+}
+html,
+body {
+  height: 100%;
+  overflow: hide;
+}
+.rotate {
+  transform: rotate(270deg);
+}
+.rotate2 {
+  transform: rotate(90deg);
+}
+
+/*Satellite Slider*/
+.slider {
+  -webkit-appearance: none;
+  width: 90%;
+  height: 15px;
+  border: 2px solid rgb(19, 19, 107);
+  border-radius: 2px;
+  background: rgba(2, 17, 27, 0.7);
+  outline: none;
+}
+.alt-container {
+  border: 2px solid rgb(19, 19, 107);
+  background: rgba(2, 17, 27, 0.7);
+  z-index: 6;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 120px;
+  width: 70px;
+  background-image: url("../images/satellite_rot.png");
+  transform: rotate(90);
+  background-size: cover;
+  background-repeat: none;
+  cursor: pointer;
+  margin-top: -14px;
+  z-index: 10;
+  position: relative;
+  bottom: 20px;
+}
+input[type="range"]::-moz-range-thumb {
+  height: 120px;
+  width: 70px;
+  background-image: url("../images/satellite_rot.png");
+  z-index: 9;
+  cursor: pointer;
+}
+input[type="range"]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 120px;
+  width: 70px;
+  border-radius: 3px;
+  background-image: url("../images/satellite_rot.png") center no-repeat;
+  cursor: pointer;
+  z-index: 9;
+}
+
+/* adjustments for index.html */
+
+.text {
+  cursor: pointer;
+}
+
+.flex-container {
+  display: flex;
+  position: relative;
+}
+
+#myWindow {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+#altitude {
+  width: 225px;
+  background-color: rgba(2, 17, 27, 0.7);
+  z-index: 8;
+  position: fixed;
+  left: 2%;
+  bottom: 85%;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: large;
+  text-align: center;
+}
+
+.rotate2 {
+  z-index: 8;
+  position: fixed;
+  left: -15%;
+  bottom: 40%;
+  width: 40%;
+}
+
+#sbnms_label {
+  position: absolute;
+  top: 1280px;
+  left: 920px;
+  font-size: 65px;
+  color: rgb(2, 17, 27);
+  opacity: 0.6;
+}
+
+#colorbar {
+  color: black;
+  position: fixed;
+  top: 8vh;
+  right: 5px;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+#colorbar_name {
+  position: fixed;
+  right: 0px;
+  bottom: 40%;
+  color: white;
+  background-color: rgba(2, 17, 27, 0.7);
+  z-index: 5;
+}
+
+.timeline-buttons {
+  width: max-content;
+  text-align: left;
+  font-size: small;
+}
+
+.button {
+  width: 1%;
+  position: relative;
+  min-width: 100px;
+}

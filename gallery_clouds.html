@@ -1,0 +1,1898 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stellwagen Bank National Marine Sanctuary Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/gallery_css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="static/js/js_gallery.js"></script>
+
+</head>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="">Stellwagen Bank National Marine Sanctuary</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="">Home</a></li>
+            <li><a href="images.html">Satellite Imagery</a></li>
+            <li class="active"><a href="">Gallery</a></li>     
+            <li><a href="">Phytoplankton</a></li>
+            <li><a href="">Process</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+<body>
+    <div class="row" style="position: relative; top: 59px; width: 98%; right: 70px;">
+        <div class="col-lg-3" style="text-align: right;">
+            <h1 style="color: grey; position: relative; left: 30px;"><b>Ocean Phytoplankton:</b></h1>
+            <h1 style="color: white; position: relative; left: 30px; bottom: 20px;">TIMELAPSE</h1>
+        </div>
+        <div class="col-lg-1" style="text-align: center;">
+            <a href="gallery.html"><img src="static/images/clouds.png" style="width: 150px; position: relative; left: 50px; top: 20px;"></a>
+            <h4 style="position: relative; left: 60px; top: 20px; color:rgb(165, 164, 164)">hide cloudy dates</h4>
+        </div>
+        <div class="col-lg-8" style="background-color: #2B2D2F; border-radius: 5px; position: relative; top: 30px; left: 80px; outline: 3px solid grey;">
+            <p style="color: lightgrey; font-size: large; z-index: 10; position: relative; left: 10px; top: 5px;">The NASA Landsat 8 satellite orbits over 
+                Stellwagen Bank  every 16 days. In this grid format, we are able to scroll to see the changes in phytoplankton concentrations
+                throughout the years. As you will see, a major obstacle of satellite image processing is cloud coverage. Click the button to the left to 
+                show or hide days with total cloud cover.</p>
+        </div>
+        
+    </div>
+    <!--IMAGES-->
+    <div id="myModal" class="modal" onclick="closeModal()" style="z-index: 10;">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+          <div class="mySlides">
+            <img src="static/images/01.14.2017/truecolor.jpg" style="width:100%"><!--1-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.14.2017/chlor_a.jpg" style="width:100%"><!--2-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.14.2017/diatoms.jpg" style="width:100%"><!--3-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.14.2017/dinoflagellates.jpg" style="width:100%"><!--4-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.14.2017/greenalgae.jpg" style="width:100%"><!--5-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.14.2017/prymnesiophytes.jpg" style="width:100%"><!--6-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.03.2017/truecolor.jpg" style="width:100%"><!--7-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.03.2017/chlor_a.jpg" style="width:100%"><!--8-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.03.2017/diatoms.jpg" style="width:100%"><!--9-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.03.2017/dinoflagellates.jpg" style="width:100%"><!--10-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.03.2017/greenalgae.jpg" style="width:100%"><!--11-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.03.2017/prymnesiophytes.jpg" style="width:100%"><!--12-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/07.09.2017/truecolor.jpg" style="width:100%"><!--13-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/07.09.2017/chlor_a.jpg" style="width:100%"><!--14-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/07.09.2017/diatoms.jpg" style="width:100%"><!--15-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/07.09.2017/dinoflagellates.jpg" style="width:100%"><!--16-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/07.09.2017/greenalgae.jpg" style="width:100%"><!--17-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/07.09.2017/haptophytes.jpg" style="width:100%"><!--18-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/08.10.2017/truecolor.jpg" style="width:100%"><!--19-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/08.10.2017/chlorophyll.jpg" style="width:100%"><!--20-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/08.10.2017/diatoms.jpg" style="width:100%"><!--21-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/08.10.2017/dinoflagellates.jpg" style="width:100%"><!--22-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/08.10.2017/greenalgae.jpg" style="width:100%"><!--23-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/08.10.2017/haptophytes.jpg" style="width:100%"><!--24-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/10.13.2017/truecolor.jpg" style="width:100%"><!--25-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/10.13.2017/chlor_a.jpg" style="width:100%"><!--26-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/10.13.2017/diatoms.jpg" style="width:100%"><!--27-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/10.13.2017/dinoflagellates.jpg" style="width:100%"><!--28-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/10.13.2017/greenalgae.jpg" style="width:100%"><!--29-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/10.13.2017/prymnesiophytes.jpg" style="width:100%"><!--30-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/11.30.2017/truecolor.jpg" style="width:100%"><!--31-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/11.30.2017/chlor_a.jpg" style="width:100%"><!--32-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/11.30.2017/diatoms.jpg" style="width:100%"><!--33-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/11.30.2017/dinoflagellates.jpg" style="width:100%"><!--34-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/11.30.2017/greenalgae.jpg" style="width:100%"><!--35-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/11.30.2017/prymnesiophytes.jpg" style="width:100%"><!--36-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/12.16.2017/truecolor.jpg" style="width:100%"><!--37-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/12.16.2017/chlor_a.jpg" style="width:100%"><!--38-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/12.16.2017/diatoms.jpg" style="width:100%"><!--39-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/12.16.2017/dinoflagellates.jpg" style="width:100%"><!--40-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/12.16.2017/greenalgae.jpg" style="width:100%"><!--41-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/12.16.2017/haptophytes.jpg" style="width:100%"><!--42-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.01.2018/truecolor.jpg" style="width:100%"><!--43-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.01.2018/chlor_a.jpg" style="width:100%"><!--44-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.01.2018/diatoms.jpg" style="width:100%"><!--45-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.01.2018/dinoflagellates.jpg" style="width:100%"><!--46-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.01.2018/greenalgae.jpg" style="width:100%"><!--47-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.01.2018/haptophytes.jpg" style="width:100%"><!--48-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.18.2018/truecolor.jpg" style="width:100%"><!--49-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.18.2018/chlor_a.jpg" style="width:100%"><!--50-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.18.2018/diatoms.jpg" style="width:100%"><!--51-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.18.2018/dinoflagellates.jpg" style="width:100%"><!--52-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.18.2018/greenalgae.jpg" style="width:100%"><!--53-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.18.2018/haptophytes.jpg" style="width:100%"><!--54-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.23.2018/truecolor.jpg" style="width:100%"><!--55-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.23.2018/chlor_a.jpg" style="width:100%"><!--56-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.23.2018/diatoms.jpg" style="width:100%"><!--57-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.23.2018/dinoflagellates.jpg" style="width:100%"><!--58-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.23.2018/greenalgae.jpg" style="width:100%"><!--59-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.23.2018/haptophytes.jpg" style="width:100%"><!--60-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.09.2019/truecolor.jpg" style="width:100%"><!--61-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.09.2019/chlor_a.jpg" style="width:100%"><!--62-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.09.2019/diatoms.jpg" style="width:100%"><!--63-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.09.2019/dinoflagellates.jpg" style="width:100%"><!--64-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.09.2019/greenalgae.jpg" style="width:100%"><!--65-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.09.2019/haptophytes.jpg" style="width:100%"><!--66-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/11.04.2019/truecolor.jpg" style="width:100%"><!--67-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/11.04.2019/chlor_a.jpg" style="width:100%"><!--68-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/11.04.2019/diatoms.jpg" style="width:100%"><!--69-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/11.04.2019/dinoflagellates.jpg" style="width:100%"><!--70-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/11.04.2019/greenalgae.jpg" style="width:100%"><!--71-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/11.04.2019/haptophytes.jpg" style="width:100%"><!--72-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.23.2020/truecolor.jpg" style="width:100%"><!--73-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.23.2020/chlor_a.jpg" style="width:100%"><!--74-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.23.2020/diatoms.jpg" style="width:100%"><!--75-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.23.2020/dinoflagellates.jpg" style="width:100%"><!--76-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.23.2020/greenalgae.jpg" style="width:100%"><!--77-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/01.23.2020/haptophytes.jpg" style="width:100%"><!--78-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.08.2020/truecolor.jpg" style="width:100%"><!--79-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.08.2020/chlor_a.jpg" style="width:100%"><!--80-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.08.2020/diatoms.jpg" style="width:100%"><!--81-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.08.2020/dinoflagellates.jpg" style="width:100%"><!--82-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.08.2020/greenalgae.jpg" style="width:100%"><!--83-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.08.2020/haptophytes.jpg" style="width:100%"><!--84-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.24.2020/truecolor.jpg" style="width:100%"><!--85-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.24.2020/chlor_a.jpg" style="width:100%"><!--86-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.24.2020/diatoms.jpg" style="width:100%"><!--87-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.24.2020/dinoflagellates.jpg" style="width:100%"><!--88-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.24.2020/greenalgae.jpg" style="width:100%"><!--89-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.24.2020/haptophytes.jpg" style="width:100%"><!--90-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.11.2020/truecolor.jpg" style="width:100%"><!--91-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.11.2020/chlor_a.jpg" style="width:100%"><!--92-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.11.2020/diatoms.jpg" style="width:100%"><!--93-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.11.2020/dinoflagellates.jpg" style="width:100%"><!--94-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.11.2020/greenalgae.jpg" style="width:100%"><!--95-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.11.2020/haptophytes.jpg" style="width:100%"><!--96-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.12.2020/truecolor.jpg" style="width:100%"><!--97-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.12.2020/chlor_a.jpg" style="width:100%"><!--98-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.12.2020/diatoms.jpg" style="width:100%"><!--99-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.12.2020/dinoflagellates.jpg" style="width:100%"><!--100-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.12.2020/greenalgae.jpg" style="width:100%"><!--101-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.12.2020/haptophytes.jpg" style="width:100%"><!--102-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.15.2017/truecolor.jpg" style="width:100%"><!--103-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.15.2017/truecolor.jpg" style="width:100%"><!--104-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.15.2017/truecolor.jpg" style="width:100%"><!--105-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.15.2017/truecolor.jpg" style="width:100%"><!--106-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.15.2017/truecolor.jpg" style="width:100%"><!--107-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/02.15.2017/truecolor.jpg" style="width:100%"><!--108-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.19.2017/truecolor.jpg" style="width:100%"><!--109-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.19.2017/truecolor.jpg" style="width:100%"><!--110-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.19.2017/truecolor.jpg" style="width:100%"><!--111-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.19.2017/truecolor.jpg" style="width:100%"><!--112-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.19.2017/truecolor.jpg" style="width:100%"><!--113-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/03.19.2017/truecolor.jpg" style="width:100%"><!--114-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.04.2017/truecolor.jpg" style="width:100%"><!--115-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.04.2017/truecolor.jpg" style="width:100%"><!--116-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.04.2017/truecolor.jpg" style="width:100%"><!--117-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.04.2017/truecolor.jpg" style="width:100%"><!--118-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.04.2017/truecolor.jpg" style="width:100%"><!--119-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.04.2017/truecolor.jpg" style="width:100%"><!--120-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/08.02.2020/truecolor.jpg" style="width:100%"><!--121-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/08.02.2020/chlor_a.jpg" style="width:100%"><!--122-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/08.02.2020/diatoms.jpg" style="width:100%"><!--123-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/08.02.2020/dinoflagellates.jpg" style="width:100%"><!--124-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/08.02.2020/greenalgae.jpg" style="width:100%"><!--125-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/08.02.2020/haptophytes.jpg" style="width:100%"><!--126-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/07.17.2020/truecolor.jpg" style="width:100%"><!--127-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/07.17.2020/chlor_a.jpg" style="width:100%"><!--128-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/07.17.2020/diatoms.jpg" style="width:100%"><!--129-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/07.17.2020/dinoflagellates.jpg" style="width:100%"><!--130-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/07.17.2020/greenalgae.jpg" style="width:100%"><!--131-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/07.17.2020/haptophytes.jpg" style="width:100%"><!--132-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.28.2020/truecolor.jpg" style="width:100%"><!--133-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.28.2020/chlor_a.jpg" style="width:100%"><!--134-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.28.2020/diatoms.jpg" style="width:100%"><!--135-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.28.2020/dinoflagellates.jpg" style="width:100%"><!--136-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.28.2020/greenalgae.jpg" style="width:100%"><!--137-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/04.28.2020/haptophytes.jpg" style="width:100%"><!--138-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/05.09.2018/truecolor.jpg" style="width:100%"><!--139-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/05.09.2018/chlor_a.jpg" style="width:100%"><!--140-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/05.09.2018/diatoms.jpg" style="width:100%"><!--141-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/05.09.2018/dinoflagellates.jpg" style="width:100%"><!--142-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/05.09.2018/greenalgae.jpg" style="width:100%"><!--143-->
+          </div>
+          <div class="mySlides">
+            <img src="static/images/05.09.2018/haptophytes.jpg" style="width:100%"><!--144-->
+          </div>
+
+
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+          <img id='colorbar' src="" style="height: 50%; position: absolute; right: -100px; top: 75px; padding-bottom: 50px; z-index: 10;">
+          <h4 id='units' style="position: absolute; right: -95px; top: 77%; color: black; z-index: 11;"></h4>
+        </div>
+    </div>
+
+    
+        <div class="container-fluid" style="width: 100%; position: relative; top: 20px;">
+            <br><br>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Jan 14, 2017-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(1); truecolor()">
+                                <img class="demo" src="static/images/01.14.2017/truecolor.jpg" width=100% alt="Truecolor | January 14, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | January 14, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(2); chlor_a()">
+                                <img class="demo" src="static/images/01.14.2017/chlor_a.jpg" width=100% alt="Chlorophyll-a | January 14, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | January 14, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(3); diatoms()">
+                                <img class="demo" src="static/images/01.14.2017/diatoms.jpg" width=100% alt="Diatoms | January 14, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | January 14, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(4); dinoflagellates()">
+                                <img class="demo" src="static/images/01.14.2017/dinoflagellates.jpg" width=100% alt="Dinoflagellates | January 14, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | January 14, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(5); greenalgae()">
+                                <img class="demo" src="static/images/01.14.2017/greenalgae.jpg" width=100% alt="Green Algae | January 14, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | January 14, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(6); haptophytes()">
+                                <img class="demo" src="static/images/01.14.2017/prymnesiophytes.jpg" width=100% alt="Haptophytes | January 14, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | January 14, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">JAN 2017</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Feb 15, 2017-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(103); truecolor()">
+                                <img class="demo" src="static/images/02.15.2017/truecolor.jpg" width=100% alt="Truecolor | February 15, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | February 15, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(104); chlor_a()">
+                                <img class="demo" src="static/images/02.15.2017/truecolor.jpg" width=100% alt="Chlorophyll-a | February 15, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | February 15, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(105); diatoms()">
+                                <img class="demo" src="static/images/02.15.2017/truecolor.jpg" width=100% alt="Diatoms | February 15, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | February 15, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(106); dinoflagellates()">
+                                <img class="demo" src="static/images/02.15.2017/truecolor.jpg" width=100% alt="Dinoflagellates | February 15, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | February 15, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(107); greenalgae()">
+                                <img class="demo" src="static/images/02.15.2017/truecolor.jpg" width=100% alt="Green Algae | February 15, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | February 15, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(108); haptophytes()">
+                                <img class="demo" src="static/images/02.15.2017/truecolor.jpg" width=100% alt="Haptophytes | February 15, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | February 15, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">FEB 2017</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Mar 03, 2017-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(7); truecolor()">
+                                <img class="demo" src="static/images/03.03.2017/truecolor.jpg" width=100% alt="Truecolor | March 3, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | Mar 3, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(8); chlor_a()">
+                                <img class="demo" src="static/images/03.03.2017/chlor_a.jpg" width=100% alt="Chlorophyll-a | March 3, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | Mar 3, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(9); diatoms()">
+                                <img class="demo" src="static/images/03.03.2017/diatoms.jpg" width=100% alt="Diatoms | March 3, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | Mar 3, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(10); dinoflagellates()">
+                                <img class="demo" src="static/images/03.03.2017/dinoflagellates.jpg" width=100% alt="Dinoflagellates | March 3, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | Mar 3, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(11); greenalgae()">
+                                <img class="demo" src="static/images/03.03.2017/greenalgae.jpg" width=100% alt="Green Algae | March 3, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | Mar 3, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(12); haptophytes()">
+                                <img class="demo" src="static/images/03.03.2017/prymnesiophytes.jpg" width=100% alt="Haptophytes | March 3, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | Mar 3, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">MAR 2017</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Mar 19, 2017-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(109); truecolor()">
+                                <img class="demo" src="static/images/03.19.2017/truecolor.jpg" width=100% alt="Truecolor | March 19, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | March 19, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(110); chlor_a()">
+                                <img class="demo" src="static/images/03.19.2017/truecolor.jpg" width=100% alt="Chlorophyll-a | March 19, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | March 19, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(111); diatoms()">
+                                <img class="demo" src="static/images/03.19.2017/truecolor.jpg" width=100% alt="Diatoms | March 19, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | March 19, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(112); dinoflagellates()">
+                                <img class="demo" src="static/images/03.19.2017/truecolor.jpg" width=100% alt="Dinoflagellates | March 19, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | March 19, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(113); greenalgae()">
+                                <img class="demo" src="static/images/03.19.2017/truecolor.jpg" width=100% alt="Green Algae | March 19, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | March 19, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(114); haptophytes()">
+                                <img class="demo" src="static/images/03.19.2017/truecolor.jpg" width=100% alt="Haptophytes | March 19, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | March 19, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">MAR 2017</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Apr 4, 2017-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(115); truecolor()">
+                                <img class="demo" src="static/images/04.04.2017/truecolor.jpg" width=100% alt="Truecolor | April 4, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | April 4, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(116); chlor_a()">
+                                <img class="demo" src="static/images/04.04.2017/truecolor.jpg" width=100% alt="Chlorophyll-a | April 4, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | April 4, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(117); diatoms()">
+                                <img class="demo" src="static/images/04.04.2017/truecolor.jpg" width=100% alt="Diatoms | April 4, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | April 4, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(118); dinoflagellates()">
+                                <img class="demo" src="static/images/04.04.2017/truecolor.jpg" width=100% alt="Dinoflagellates | April 4, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | April 4, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(119); greenalgae()">
+                                <img class="demo" src="static/images/04.04.2017/truecolor.jpg" width=100% alt="Green Algae | April 4, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | April 4, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(120); haptophytes()">
+                                <img class="demo" src="static/images/04.04.2017/truecolor.jpg" width=100% alt="Haptophytes | April 4, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | April 4, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">APR 2017</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Jul 09, 2017-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(13); truecolor()">
+                                <img class="demo" src="static/images/07.09.2017/truecolor.jpg" width=100% alt="Truecolor | July 9, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | July 9, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(14); chlor_a()">
+                                <img class="demo" src="static/images/07.09.2017/chlor_a.jpg" width=100% alt="Chlorophyll-a | July 9, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | July 9, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(15); diatoms()">
+                                <img class="demo" src="static/images/07.09.2017/diatoms.jpg" width=100% alt="Diatoms | July 9, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | July 9, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(16); dinoflagellates()">
+                                <img class="demo" src="static/images/07.09.2017/dinoflagellates.jpg" width=100% alt="Dinoflagellates | July 9, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | July 9, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(17); greenalgae()">
+                                <img class="demo" src="static/images/07.09.2017/greenalgae.jpg" width=100% alt="Green Algae | July 9, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | July 9, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(18); haptophytes()">
+                                <img class="demo" src="static/images/07.09.2017/prymnesiophytes.jpg" width=100% alt="Haptophytes | July 9, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | July 9, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">JUL 2017</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Aug 10, 2017-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(19); truecolor()">
+                                <img class="demo" src="static/images/08.10.2017/truecolor.jpg" width=100% alt="Truecolor | August 10, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | August 10, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(20); chlor_a()">
+                                <img class="demo" src="static/images/08.10.2017/chlorophyll.jpg" width=100% alt="Chlorophyll-a | August 10, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | August 10, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(21); diatoms()">
+                                <img class="demo" src="static/images/08.10.2017/diatoms.jpg" width=100% alt="Diatoms | August 10, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | August 10, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(22); dinoflagellates()">
+                                <img class="demo" src="static/images/08.10.2017/dinoflagellates.jpg" width=100% alt="Dinoflagellates | August 10, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | August 10, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(23); greenalgae()">
+                                <img class="demo" src="static/images/08.10.2017/greenalgae.jpg" width=100% alt="Green Algae | August 10, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | August 10, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(24); haptophytes()">
+                                <img class="demo" src="static/images/08.10.2017/haptophytes.jpg" width=100% alt="Haptophytes | August 10, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | August 10, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">AUG 2017</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Oct 13, 2017-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(25); truecolor()">
+                                <img class="demo" src="static/images/10.13.2017/truecolor.jpg" width=100% alt="Truecolor | October 13, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | October 13, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(26); chlor_a()">
+                                <img class="demo" src="static/images/10.13.2017/chlorophyll.jpg" width=100% alt="Chlorophyll-a | October 13, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | October 13, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(27); diatoms()">
+                                <img class="demo" src="static/images/10.13.2017/diatoms.jpg" width=100% alt="Diatoms | October 13, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | October 13, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(28); dinoflagellates()">
+                                <img class="demo" src="static/images/10.13.2017/dinoflagellates.jpg" width=100% alt="Dinoflagellates | October 13, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | October 13, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(29); greenalgae()">
+                                <img class="demo" src="static/images/10.13.2017/greenalgae.jpg" width=100% alt="Green Algae | October 13, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | October 13, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(30); haptophytes()">
+                                <img class="demo" src="static/images/10.13.2017/prymnesiophytes.jpg" width=100% alt="Haptophytes | October 13, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | October 13, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">OCT 2017</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Nov 30, 2017-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(31); truecolor()">
+                                <img class="demo" src="static/images/11.30.2017/truecolor.jpg" width=100% alt="Truecolor | November 30, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | November 30, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(32); chlor_a()">
+                                <img class="demo" src="static/images/11.30.2017/chlor_a.jpg" width=100% alt="Chlorophyll-a | November 30, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | November 30, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(33); diatoms()">
+                                <img class="demo" src="static/images/11.30.2017/diatoms.jpg" width=100% alt="Diatoms | November 30, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | November 30, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(34); dinoflagellates()">
+                                <img class="demo" src="static/images/11.30.2017/dinoflagellates.jpg" width=100% alt="Dinoflagellates | November 30, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | November 30, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(35); greenalgae()">
+                                <img class="demo" src="static/images/11.30.2017/greenalgae.jpg" width=100% alt="Green Algae | November 30, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | November 30, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(36); haptophytes()">
+                                <img class="demo" src="static/images/11.30.2017/prymnesiophytes.jpg" width=100% alt="Haptophytes | November 30, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | November 30, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">NOV 2017</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Dec 16, 2017-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(37); truecolor()">
+                                <img class="demo" src="static/images/12.16.2017/truecolor.jpg" width=100% alt="Truecolor | December 16, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | December 16, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(38); chlor_a()">
+                                <img class="demo" src="static/images/12.16.2017/chlor_a.jpg" width=100% alt="Chlorophyll-a | December 16, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | December 16, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(39); diatoms()">
+                                <img class="demo" src="static/images/12.16.2017/diatoms.jpg" width=100% alt="Diatoms | December 16, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | December 16, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(40); dinoflagellates()">
+                                <img class="demo" src="static/images/12.16.2017/dinoflagellates.jpg" width=100% alt="Dinoflagellates | December 16, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | December 16, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(41); greenalgae()">
+                                <img class="demo" src="static/images/12.16.2017/greenalgae.jpg" width=100% alt="Green Algae | December 16, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | December 16, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(42); haptophytes()">
+                                <img class="demo" src="static/images/12.16.2017/haptophytes.jpg" width=100% alt="Haptophytes | December 16, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | December 16, 2017</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">DEC 2017</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Jan 01, 2018-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(43); truecolor()">
+                                <img class="demo" src="static/images/01.01.2018/truecolor.jpg" width=100% alt="Truecolor | January 1, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | January 1, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(44); chlor_a()">
+                                <img class="demo" src="static/images/01.01.2018/chlor_a.jpg" width=100% alt="Chlorophyll-a | January 1, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | January 1, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(45); diatoms()">
+                                <img class="demo" src="static/images/01.01.2018/diatoms.jpg" width=100% alt="Diatoms | January 1, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | January 1, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(46); dinoflagellates()">
+                                <img class="demo" src="static/images/01.01.2018/dinoflagellates.jpg" width=100% alt="Dinoflagellates | January 1, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | January 1, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(47); greenalgae()">
+                                <img class="demo" src="static/images/01.01.2018/greenalgae.jpg" width=100% alt="Green Algae | January 1, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | January 1, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(48); haptophytes()">
+                                <img class="demo" src="static/images/01.01.2018/haptophytes.jpg" width=100% alt="Haptophytes | January 1, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | January 1, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">JAN 2018</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Feb 18, 2018-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(49); truecolor()">
+                                <img class="demo" src="static/images/02.18.2018/truecolor.jpg" width=100% alt="Truecolor | February 18, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | February 18, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(50); chlor_a()">
+                                <img class="demo" src="static/images/02.18.2018/chlor_a.jpg" width=100% alt="Chlorophyll-a | February 18, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | February 18, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(51); diatoms()">
+                                <img class="demo" src="static/images/02.18.2018/diatoms.jpg" width=100% alt="Diatoms | February 18, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | February 18, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(52); dinoflagellates()">
+                                <img class="demo" src="static/images/02.18.2018/dinoflagellates.jpg" width=100% alt="Dinoflagellates | February 18, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | February 18, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(53); greenalgae()">
+                                <img class="demo" src="static/images/02.18.2018/greenalgae.jpg" width=100% alt="Green Algae | February 18, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | February 18, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(54); haptophytes()">
+                                <img class="demo" src="static/images/02.18.2018/haptophytes.jpg" width=100% alt="Haptophytes | February 18, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | February 18, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">FEB 2018</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--April 23, 2018-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(55); truecolor()">
+                                <img class="demo" src="static/images/04.23.2018/truecolor.jpg" width=100% alt="Truecolor | April 23, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | April 23, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(56); chlor_a()">
+                                <img class="demo" src="static/images/04.23.2018/chlor_a.jpg" width=100% alt="Chlorophyll-a | April 23, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | April 23, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(57); diatoms()">
+                                <img class="demo" src="static/images/04.23.2018/diatoms.jpg" width=100% alt="Diatoms | April 23, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | April 23, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(58); dinoflagellates()">
+                                <img class="demo" src="static/images/04.23.2018/dinoflagellates.jpg" width=100% alt="Dinoflagellates | April 23, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | April 23, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(59); greenalgae()">
+                                <img class="demo" src="static/images/04.23.2018/greenalgae.jpg" width=100% alt="Green Algae | April 23, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | April 23, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(60); haptophytes()">
+                                <img class="demo" src="static/images/04.23.2018/haptophytes.jpg" width=100% alt="Haptophytes | April 23, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | April 23, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">APR 2018</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--May 09, 2018-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(139); truecolor()">
+                                <img class="demo" src="static/images/05.09.2018/truecolor.jpg" width=100% alt="Truecolor | May 9, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | May 9, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(140); chlor_a()">
+                                <img class="demo" src="static/images/05.09.2018/chlor_a.jpg" width=100% alt="Chlorophyll-a | May 9, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | May 9, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(141); diatoms()">
+                                <img class="demo" src="static/images/05.09.2018/diatoms.jpg" width=100% alt="Diatoms | April 23, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | April 23, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(142); dinoflagellates()">
+                                <img class="demo" src="static/images/05.09.2018/dinoflagellates.jpg" width=100% alt="Dinoflagellates | May 9, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | May 9, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(143); greenalgae()">
+                                <img class="demo" src="static/images/05.09.2018/greenalgae.jpg" width=100% alt="Green Algae | May 9, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | May 9, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(144); haptophytes()">
+                                <img class="demo" src="static/images/05.09.2018/haptophytes.jpg" width=100% alt="Haptophytes | May 9, 2018">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | May 9, 2018</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">MAY 2018</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Mar 09, 2019-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(61); truecolor()">
+                                <img class="demo" src="static/images/03.09.2019/truecolor.jpg" width=100% alt="Truecolor | March 9, 2017">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | March 9, 2019</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(62); chlor_a()">
+                                <img class="demo" src="static/images/03.09.2019/chlor_a.jpg" width=100% alt="Chlorophyll-a | March 9, 2019">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | March 9, 2019</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(63); diatoms()">
+                                <img class="demo" src="static/images/03.09.2019/diatoms.jpg" width=100% alt="Diatoms | March 9, 2019">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | March 9, 2019</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(64); dinoflagellates()">
+                                <img class="demo" src="static/images/03.09.2019/dinoflagellates.jpg" width=100% alt="Dinoflagellates | March 9, 2019">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | March 9, 2019</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(65); greenalgae()">
+                                <img class="demo" src="static/images/03.09.2019/greenalgae.jpg" width=100% alt="Green Algae | March 9, 2019">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | March 9, 2019</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(66); haptophytes()">
+                                <img class="demo" src="static/images/03.09.2019/haptophytes.jpg" width=100% alt="Haptophytes | March 9, 2019">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | March 9, 2019</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">MAR 2019</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Nov 04, 2019-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(67); truecolor()">
+                                <img class="demo" src="static/images/11.04.2019/truecolor.jpg" width=100% alt="Truecolor | November 4, 2019">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | November 4, 2019</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(68); chlor_a()">
+                                <img class="demo" src="static/images/11.04.2019/chlor_a.jpg" width=100% alt="Chlorophyll-a | November 4, 2019">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | November 4, 2019</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(69); diatoms()">
+                                <img class="demo" src="static/images/11.04.2019/diatoms.jpg" width=100% alt="Diatoms | November 4, 2019">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | November 4, 2019</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(70); dinoflagellates()">
+                                <img class="demo" src="static/images/11.04.2019/dinoflagellates.jpg" width=100% alt="Dinoflagellates | November 4, 2019">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | November 4, 2019</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(71); greenalgae()">
+                                <img class="demo" src="static/images/11.04.2019/greenalgae.jpg" width=100% alt="Green Algae | November 4, 2019">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | November 4, 2019</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(72); haptophytes()">
+                                <img class="demo" src="static/images/11.04.2019/haptophytes.jpg" width=100% alt="Haptophytes | November 4, 2019">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | November 4, 2019</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">NOV 2019</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Jan 23, 2020-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(73); truecolor()">
+                                <img class="demo" src="static/images/01.23.2020/truecolor.jpg" width=100% alt="Truecolor | January 23, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | January 23, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(74); chlor_a()">
+                                <img class="demo" src="static/images/01.23.2020/chlor_a.jpg" width=100% alt="Chlorophyll-a | January 23, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | January 23, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(75); diatoms()">
+                                <img class="demo" src="static/images/01.23.2020/diatoms.jpg" width=100% alt="Diatoms | January 23, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms |January 23, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(76); dinoflagellates()">
+                                <img class="demo" src="static/images/01.23.2020/dinoflagellates.jpg" width=100% alt="Dinoflagellates | January 23, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | January 23, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(77); greenalgae()">
+                                <img class="demo" src="static/images/01.23.2020/greenalgae.jpg" width=100% alt="Green Algae | January 23, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | January 23, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(78); haptophytes()">
+                                <img class="demo" src="static/images/01.23.2020/haptophytes.jpg" width=100% alt="Haptophytes | January 23, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | January 23, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">JAN 2020</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Feb 08, 2020-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(79); truecolor()">
+                                <img class="demo" src="static/images/02.08.2020/truecolor.jpg" width=100% alt="Truecolor | February 8, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | February 8, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(80); chlor_a()">
+                                <img class="demo" src="static/images/02.08.2020/chlor_a.jpg" width=100% alt="Chlorophyll-a | February 8, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | February 8, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(81); diatoms()">
+                                <img class="demo" src="static/images/02.08.2020/diatoms.jpg" width=100% alt="Diatoms | February 8, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms |February 8, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(82); dinoflagellates()">
+                                <img class="demo" src="static/images/02.08.2020/dinoflagellates.jpg" width=100% alt="Dinoflagellates | February 8, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | February 8, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(83); greenalgae()">
+                                <img class="demo" src="static/images/02.08.2020/greenalgae.jpg" width=100% alt="Green Algae | February 8, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | February 8, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(84); haptophytes()">
+                                <img class="demo" src="static/images/02.08.2020/haptophytes.jpg" width=100% alt="Haptophytes | February 8, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | February 8, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">FEB 2020</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Feb 24, 2020-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(85); truecolor()">
+                                <img class="demo" src="static/images/02.24.2020/truecolor.jpg" width=100% alt="Truecolor | February 24, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | February 24, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(86); chlor_a()">
+                                <img class="demo" src="static/images/02.24.2020/chlor_a.jpg" width=100% alt="Chlorophyll-a | February 24, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | February 24, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(87); diatoms()">
+                                <img class="demo" src="static/images/02.24.2020/diatoms.jpg" width=100% alt="Diatoms | February 24, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | February 24, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(88); dinoflagellates()">
+                                <img class="demo" src="static/images/02.24.2020/dinoflagellates.jpg" width=100% alt="Dinoflagellates | February 24, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | February 24, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(89); greenalgae()">
+                                <img class="demo" src="static/images/02.24.2020/greenalgae.jpg" width=100% alt="Green Algae | February 24, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | February 24, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(90); haptophytes()">
+                                <img class="demo" src="static/images/02.24.2020/haptophytes.jpg" width=100% alt="Haptophytes | February 24, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | February 24, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">FEB 2020</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Mar 11, 2020-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(91); truecolor()">
+                                <img class="demo" src="static/images/03.11.2020/truecolor.jpg" width=100% alt="Truecolor | March 11, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | March 11, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(92); chlor_a()">
+                                <img class="demo" src="static/images/03.11.2020/chlor_a.jpg" width=100% alt="Chlorophyll-a | March 11, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | March 11, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(93); diatoms()">
+                                <img class="demo" src="static/images/03.11.2020/diatoms.jpg" width=100% alt="Diatoms | March 11, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | March 11, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(94); dinoflagellates()">
+                                <img class="demo" src="static/images/03.11.2020/dinoflagellates.jpg" width=100% alt="Dinoflagellates | March 11, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | March 11, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(95); greenalgae()">
+                                <img class="demo" src="static/images/03.11.2020/greenalgae.jpg" width=100% alt="Green Algae | March 11, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | March 11, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(96); haptophytes()">
+                                <img class="demo" src="static/images/03.11.2020/haptophytes.jpg" width=100% alt="Haptophytes | March 11, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | March 11, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">MAR 2020</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--April 12, 2020-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(97); truecolor()">
+                                <img class="demo" src="static/images/04.12.2020/truecolor.jpg" width=100% alt="Truecolor | April 12, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | April 12, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(98); chlor_a()">
+                                <img class="demo" src="static/images/04.12.2020/chlor_a.jpg" width=100% alt="Chlorophyll-a | April 12, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | April 12, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(99); diatoms()">
+                                <img class="demo" src="static/images/04.12.2020/diatoms.jpg" width=100% alt="Diatoms | April 12, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | April 12, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(100); dinoflagellates()">
+                                <img class="demo" src="static/images/04.12.2020/dinoflagellates.jpg" width=100% alt="Dinoflagellates | April 12, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | April 12, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(101); greenalgae()">
+                                <img class="demo" src="static/images/04.12.2020/greenalgae.jpg" width=100% alt="Green Algae | April 12, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | April 12, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(102); haptophytes()">
+                                <img class="demo" src="static/images/04.12.2020/haptophytes.jpg" width=100% alt="Haptophytes | April 12, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | April 12, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">APR 2020</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Aug 02, 2020-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(133); truecolor()">
+                                <img class="demo" src="static/images/04.28.2020/truecolor.jpg" width=100% alt="Truecolor | April 28, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | April 28, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(134); chlor_a()">
+                                <img class="demo" src="static/images/04.28.2020/chlor_a.jpg" width=100% alt="Chlorophyll-a | April 28, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | April 28, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(135); diatoms()">
+                                <img class="demo" src="static/images/04.28.2020/diatoms.jpg" width=100% alt="Diatoms | April 28, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | April 28, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(136); dinoflagellates()">
+                                <img class="demo" src="static/images/04.28.2020/dinoflagellates.jpg" width=100% alt="Dinoflagellates | April 28, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | April 28, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(137); greenalgae()">
+                                <img class="demo" src="static/images/04.28.2020/greenalgae.jpg" width=100% alt="Green Algae | April 28, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | April 28, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(138); haptophytes()">
+                                <img class="demo" src="static/images/04.28.2020/haptophytes.jpg" width=100% alt="Haptophytes | April 28, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | April 28, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">APR 2020</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Jul 17, 2020-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(127); truecolor()">
+                                <img class="demo" src="static/images/07.17.2020/truecolor.jpg" width=100% alt="Truecolor | July 17, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | July 17, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(128); chlor_a()">
+                                <img class="demo" src="static/images/07.17.2020/chlor_a.jpg" width=100% alt="Chlorophyll-a | July 17, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | July 17, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(129); diatoms()">
+                                <img class="demo" src="static/images/07.17.2020/diatoms.jpg" width=100% alt="Diatoms | July 17, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | July 17, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(130); dinoflagellates()">
+                                <img class="demo" src="static/images/07.17.2020/dinoflagellates.jpg" width=100% alt="Dinoflagellates | July 17, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | July 17, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(131); greenalgae()">
+                                <img class="demo" src="static/images/07.17.2020/greenalgae.jpg" width=100% alt="Green Algae | July 17, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | July 17, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(132); haptophytes()">
+                                <img class="demo" src="static/images/07.17.2020/haptophytes.jpg" width=100% alt="Haptophytes | July 17, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | July 17, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">JUL 2020</h3>
+                </div>
+            </div>
+            <div class="flex-container" style="display: flex; position: relative; right: .5%; width: 100%;">
+                <div class="container" style="width: 96%;">
+                    <!--Aug 02, 2020-->
+                    <div class="row no-gutter" class="NoGutter" style="float: left;">
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(121); truecolor()">
+                                <img class="demo" src="static/images/08.02.2020/truecolor.jpg" width=100% alt="Truecolor | August 2, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Truecolor | August 2, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2" width=16%>
+                            <div class="image-container" onclick="openModal(); currentSlide(122); chlor_a()">
+                                <img class="demo" src="static/images/08.02.2020/chlor_a.jpg" width=100% alt="Chlorophyll-a | August 2, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Chlorophyll-a | August 2, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(123); diatoms()">
+                                <img class="demo" src="static/images/08.02.2020/diatoms.jpg" width=100% alt="Diatoms | August 2, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Diatoms | August 2, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(124); dinoflagellates()">
+                                <img class="demo" src="static/images/08.02.2020/dinoflagellates.jpg" width=100% alt="Dinoflagellates | August 2, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Dinoflagellates | August 2, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(125); greenalgae()">
+                                <img class="demo" src="static/images/08.02.2020/greenalgae.jpg" width=100% alt="Green Algae | August 2, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Green Algae | August 2, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="image-container" onclick="openModal(); currentSlide(126); haptophytes()">
+                                <img class="demo" src="static/images/08.02.2020/haptophytes.jpg" width=100% alt="Haptophytes | August 2, 2020">
+                                <div class="overlay">
+                                    <div class="text" style="cursor: pointer;">Haptophytes | August 2, 2020</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="width: 4%; background: rgb(19, 19, 107); outline: 10px solid rgba(2, 17, 27, 1)">
+                    <h3 style="position: relative; top: 30%; color: white; right: 5px;">AUG 2020</h3>
+                </div>
+            </div>
+            
+
+
+        </div>
+        
+
+</body>
+</html>

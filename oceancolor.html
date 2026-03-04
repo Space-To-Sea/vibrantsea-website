@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stellwagen Bank National Marine Sanctuary Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="static/js/wheel-zoom.js" type="text/javascript"></script>
+    <script src="static/js/js_images.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="static/css/images_css.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/navbar_css.css" />
+</head> 
+<style>
+.raindbow-letters{
+  font-size: 60px;
+}
+.rainbow-letters span:nth-child(10n + 1) {
+  color: #ef5350;
+}
+
+.rainbow-letters span:nth-child(10n + 2) {
+  color: #ff8800;
+}
+
+.rainbow-letters span:nth-child(10n + 3){
+  color: #f8f40c;
+}
+
+.rainbow-letters span:nth-child(10n + 5){
+  color: #25f00a;
+}
+
+.rainbow-letters span:nth-child(10n + 4) {
+  color: #2196f3;
+}
+
+.rainbow-letters span:nth-child(10n + 6){
+  color: #00bcd4;
+}
+
+.rainbow-letters span:nth-child(10n + 7){
+  color: #9320c9;
+}
+
+.rainbow-letters span:nth-child(10n + 8){
+  color: #ff07ff;
+}
+.rainbow-letters span:nth-child(10n + 9){
+  color: #e7193c;
+}
+.rainbow-letters span:nth-child(10n + 10){
+  color: #e4a112;
+}
+
+.color-columns{
+  width: 20%;
+  padding: 15px;
+}
+
+.microorganism {
+  height: 97px;
+  font-size: 0.95vw;
+}
+
+.chlorophyll {
+  height: 60px;
+  font-size: 0.95vw;
+}
+
+.names {
+  height: 90px;
+  overflow-wrap: break-word;
+}
+
+.names p{
+  font-size: 2vw;
+}
+
+@media screen and (max-width: 1000px) {.names {
+    height: 60px;
+  }}
+
+@media screen and (max-width: 750px) {
+  .names {
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .color-columns{
+    width: 100%;
+    padding: 15px;
+  }
+
+  .microorganism {
+    font-size:18px;
+  }
+
+  .chlorophyll {
+    font-size:18px;
+  }
+
+  .names {
+    height: 60px;
+  }
+
+  .names p{
+    font-size: 30px;
+  }
+}
+
+.color-text {
+  float: left;
+}
+
+.conc-text {
+  float: right;
+}
+</style>
+</head>
+<body>
+  <script type="text/javascript">
+    navBar();
+  </script>
+<!-- <div class="container" style="position: fixed; top: 15%; right: 25%; width: 50%; overflow: hidden; height: 46%; border-radius: 100px;">
+  <img src="static/images/08.18.2020.truecolor_final.jpg" style="opacity: .7; filter: blur(3px); -webkit-filter: blur(3px); width: 175%; position: relative; top: -100%; left: -10%; ">
+</div> -->
+<div class="container-fluid" style="top: 12%; width: 100%;">
+  <h1 style="color: rgb(206, 206, 206); text-align: center; font-size: 50px;"><b>
+    What is Ocean Color?</b></h1>
+    <div class="row" id="color-spectrum" style="position: relative; top: 3vh;">
+      <script type="text/javascript">
+        createColorSpectrum("Chlorophyll-a Spectrum", "mg/m^3");
+        createColorSpectrum("Diatom Purples", "%chl-a");
+        createColorSpectrum("Dinoflagellate Yellows", "%chl-a");
+        createColorSpectrum("Green Algae Greens", "%chl-a");
+        createColorSpectrum("Haptophyte Blues", "%chl-a");
+      </script>
+    </div>
+
+</div>
+<div>
+  
+</div>
+<div class="container-fluid" style="position: absolute;">
+  <!--<img src="static/images/pantone_with_images.png" width="100%">-->
+  <br><br>
+  <h5 style="color: rgb(235, 233, 233); text-align: left; text-indent: 50px;">Our ocean planet is a living canvas in which microscopic plankton are so abundant they can transform the color of the sea-surface.  
+    At first glance, the ocean appears a solid blue, the result of red spectrum of visible light being absorbed by water.  However, the ocean is not a solid color, but 
+    rather an ever-changing gradient of blue and green hues.  New England’s ocean is often described as emerald-green, the result of an abundance of ocean drifting
+     plankton containing the pigment chlorophyll-a. From a human perspective on Earth, we are too close to the sea-surface to observe the subtle color variations.  
+     But from the perspective of NASA Landsat 8 satellites orbiting through space, the ocean’s surface can be viewed as dynamic ever-changing living pallet of swirling brush strokes.  </h5>
+     <br>
+     <h5 style="color: rgb(235, 233, 233); text-align: left; text-indent: 50px;">
+     At MIT Sea Grant, we are processing NASA’s raw satellite data into works of art that are also scientifically significant to reveal a series of ocean plankton visualizations.  
+     They range from True-color images, that are a realistic color representation of the ocean and plankton, to chlorophyll images, that apply a full color spectrum to reveal the absence and intensity 
+     of concentrations of ocean chlorophyll-a.  Other plankton visualizations combine a modern-day Andy Warhol vibrant color pallet to communicate the abundance of microscopic creatures. Through haptophytes 
+     blues, dinoflagellates yellows, diatom purples, and green-algae green, the processed satellite images are an artistic expression that reveals a deeper understanding into 
+    our environment at the microscopic and planetary scale. Each visualization is a limited-edition work of art and an environmentally significant snapshot in time.</h5>
+</div>
+
+</body>
+
+</html>

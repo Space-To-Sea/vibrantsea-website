@@ -1,0 +1,18 @@
+.hide {
+  display: contents;
+}
+
+@media screen and (max-width: 600px) {
+  .hide {
+    display: none;
+  }
+}
+.seaGrantLogo {
+  width: 250px;
+}
+
+@media screen and (max-width: 375px) {
+  .seaGrantLogo {
+    width: 175px;
+  }
+}

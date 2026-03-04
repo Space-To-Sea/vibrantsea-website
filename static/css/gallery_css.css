@@ -1,0 +1,285 @@
+body {
+  background-color: rgb(2, 17, 27) !important;
+  font-family: Helvetica;
+}
+header {
+  background-color: #2b2d2f;
+  color: white;
+  font-family: Helvetica;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+nav {
+  position: fixed;
+  font-family: Helvetica;
+  font-size: medium;
+  padding: 0;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+img {
+  padding: 4px;
+}
+p {
+  font-size: small;
+}
+
+.hide {
+  display: contents;
+}
+
+@media screen and (max-width: 600px) {
+  .hide {
+    display: none;
+  }
+}
+.seaGrantLogo {
+  width: 250px;
+}
+
+@media screen and (max-width: 375px) {
+  .seaGrantLogo {
+    width: 175px;
+  }
+}
+
+.date {
+  color: white;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: rgb(19, 19, 107);
+}
+.image-container {
+  cursor: pointer;
+}
+.image-container:hover {
+  transform: scale(1.05);
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(2, 17, 27, 0);
+  z-index: 9;
+}
+.image-container:hover .overlay {
+  opacity: 1;
+}
+.chlor_a-container:hover .overlay {
+  opacity: 1;
+}
+.diatoms-container:hover .overlay {
+  opacity: 1;
+}
+.dinoflagellates-container:hover .overlay {
+  opacity: 1;
+}
+.greenalgae-container:hover .overlay {
+  opacity: 1;
+}
+.haptophytes-container:hover .overlay {
+  opacity: 1;
+}
+.text {
+  color: white;
+  font-size: 1vw;
+  position: absolute;
+  top: 93%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(2, 17, 27, 0.5);
+  border-radius: 5px;
+  padding: 1px;
+  width: 90%;
+}
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutter [class*="col-"]:not(:first-child),
+.row.no-gutter [class*="col-"]:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(2, 17, 27, 0.7);
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 5%;
+  left: 0%;
+  margin: auto;
+  padding: 0;
+  width: 39%;
+  max-width: 800px;
+  background: rgba(2, 17, 27, 0.7) !important;
+}
+
+/* The Close Button */
+.close {
+  color: white !important;
+  position: absolute;
+  top: 7%;
+  right: 23%;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: rgb(2, 17, 27);
+  padding: 2px 16px;
+  color: white;
+  z-index: 10;
+}
+.demo {
+  opacity: 1;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+.colorbar {
+  position: absolute;
+  right: 15%;
+  top: 25%;
+}
+
+.container.main {
+  width: 100% !important;
+  max-width: none;
+}
+
+/* adjustments for gallery.html */
+
+.modal-content {
+  position: relative;
+}
+
+#colorbar {
+  height: 50%;
+  position: absolute;
+  right: -100px;
+  top: 75px;
+  padding-bottom: 50px;
+  z-index: 10;
+}
+.flex-container {
+  display: flex;
+  position: relative;
+  right: 0.5%;
+  width: 100%;
+}
+.container {
+  float: left;
+  position: relative;
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+  border-top-width: 3px;
+  border-bottom-width: 5.3px;
+  border-color: black;
+  padding: 0px;
+  width: 4%;
+  background: rgb(19, 19, 107);
+}
+h2 {
+  color: rgb(194, 194, 194);
+  position: relative;
+  left: 120px;
+  top: 15px;
+  font-size: 32px;
+}
+h4 {
+  position: absolute;
+  color: black;
+  right: -95px;
+  top: 77%;
+  z-index: 11;
+}
+h5 {
+  font-size: 1.8vw;
+  text-align: center;
+  position: relative;
+  color: white;
+  top: 30%;
+}
+.no-gutter {
+  float: left;
+}
+.demo {
+  width: 100%;
+}
+.text {
+  cursor: pointer;
+}
+#page_header {
+  position: relative;
+  top: 80px;
+  width: 98%;
+  right: 80px;
+}
+#pageHeader_col1 {
+  text-align: left;
+}
+#pageHeader_col2 {
+  text-align: center;
+}
+
+#img_clouds {
+  width: 150px;
+  position: relative;
+  left: 40px;
+  top: 10px;
+}
+#navbar {
+  position: fixed;
+}
+.navbar-brand {
+  font-size: x-large;
+}
+#nav_col1 {
+  float: left;
+}
