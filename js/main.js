@@ -35,6 +35,7 @@ function navBar() {
     ["Ocean Color", "oceancolor.html"],
     ["Process", "process.html"],
     ["Remote Sensing", "satellites.html"],
+    ["Data", "data.html"],
     ["About Us", "about_us.html"],
     ["Project Website", "https://space2sea.mit.edu"],
   ];
