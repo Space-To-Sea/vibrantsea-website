@@ -18,11 +18,68 @@ function setChartType(chartType) {
   render();
 }
 
+function nearestJan1(dateStr) {
+  const d = new Date(dateStr);
+  const year = d.getFullYear();
+  const jan1 = new Date(year, 0, 1); // January 1 of that year
+  return jan1.toISOString().slice(0, 10); // "YYYY-MM-DD"
+}
+
 function render() {
   if (!allPlanktonData) return;
 
+  // Clear any previous rendered elements
+  const chartDiv = document.getElementById("active-chart");
+  const controlsDiv = document.getElementById("chart-controls");
+  controlsDiv.innerHTML = "";
+  chartDiv.innerHTML = "";
+
   if (currentChartType === "bar") {
     drawStackedBar("active-chart", allPlanktonData, 1);
+
+    const startInput = document.createElement("input");
+    startInput.type = "date";
+    startInput.id = "start-date";
+
+    const endInput = document.createElement("input");
+    endInput.type = "date";
+    endInput.id = "end-date";
+
+    const maxYInput = document.createElement("input");
+    maxYInput.type = "number";
+    maxYInput.id = "max-y";
+
+    const applyButton = document.createElement("button");
+    applyButton.textContent = "Apply";
+    applyButton.onclick = function () {
+      const updates = {};
+      const start = startInput.value;
+      const end = endInput.value;
+      const maxY = maxYInput.value;
+      if (start && end) {
+        updates["xaxis.range"] = [start, end];
+      }
+      if (maxY) {
+        const maxYFloat = parseFloat(maxY);
+        if (!isNaN(maxYFloat) && maxYFloat > 0) {
+          updates["yaxis.range"] = [0, maxYFloat];
+        }
+      }
+      Plotly.relayout("active-chart", updates);
+    };
+    // Pre-fill start and end dates with min/max dates
+    const dates = allPlanktonData.map((r) => r.date);
+    startInput.value = nearestJan1(dates[0]);
+    endInput.value = dates[dates.length - 1];
+
+    // Add to controls div
+    controlsDiv.appendChild(document.createTextNode("Start: "));
+    controlsDiv.appendChild(startInput);
+    controlsDiv.appendChild(document.createTextNode(" End: "));
+    controlsDiv.appendChild(endInput);
+    controlsDiv.appendChild(document.createTextNode("Max Y: "));
+    controlsDiv.appendChild(maxYInput);
+    controlsDiv.appendChild(applyButton);
   }
 }
 
@@ -73,6 +130,7 @@ fetch("static/data/phytoplankton_longterm_data.csv")
     calcOtherCategory(allPlanktonData);
 
     console.log("Data ready!");
+    render();
   });
 
 function drawStackedBar(targetDiv, data, regionNum) {
@@ -97,6 +155,11 @@ function drawStackedBar(targetDiv, data, regionNum) {
     xaxis: {
       type: "date",
       tickformat: "%b %Y",
+      showgrid: true,
+      range: [
+        nearestJan1(regionRows[0].date),
+        regionRows[regionRows.length - 1].date,
+      ],
     },
     showlegend: true,
   };
