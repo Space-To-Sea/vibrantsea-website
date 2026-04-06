@@ -14,7 +14,7 @@ function navBar() {
   nav_col1.innerHTML =
     '<span class="navbar-brand mb-0 h1" style="font-size: x-large;">' +
     '<img class="seaGrantLogo" src="static/images/MIT_MITSG_EqualFocus_Logo_White_large-copy.png">' +
-    '<span class="hide"><b>SPACE TO SEA</b><img src="static/images/dino_drawing.png" width="35px"></span>' +
+    '<a href="https://space2sea.mit.edu" class="spaceToSeaText" style="text-decoration: none; color: inherit;"><b>SPACE TO SEA</b><img src="static/images/dino_drawing.png" width="35px"></a>' +
     "</span>" +
     '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">' +
     '<span class="navbar-toggler-icon"></span>' +
@@ -37,7 +37,6 @@ function navBar() {
     ["Remote Sensing", "satellites.html"],
     ["Data", "data.html"],
     ["About Us", "about_us.html"],
-    ["Project Website", "https://space2sea.mit.edu"],
   ];
   $.each(navbarItems, function (i) {
     var navbarNavListItem = document.createElement("li");

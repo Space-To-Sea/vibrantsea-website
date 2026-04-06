@@ -6,6 +6,12 @@
   .hide {
     display: none;
   }
+  .spaceToSeaText {
+    font-size: 0.7rem;
+  }
+  .spaceToSeaText img {
+    width: 20px;
+  }
 }
 .seaGrantLogo {
   width: 250px;
