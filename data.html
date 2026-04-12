@@ -21,116 +21,26 @@
     <link rel="stylesheet" href="static/css/navbar_css.css" />
   </head>
   <style>
-    .raindow-letters {
-      font-size: 60px;
-    }
-    .rainbow-letters span:nth-child(10n + 1) {
-      color: #ef5350;
-    }
-
-    .rainbow-letters span:nth-child(10n + 2) {
-      color: #ff8800;
-    }
-
-    .rainbow-letters span:nth-child(10n + 3) {
-      color: #f8f40c;
-    }
-
-    .rainbow-letters span:nth-child(10n + 5) {
-      color: #25f00a;
-    }
-
-    .rainbow-letters span:nth-child(10n + 4) {
-      color: #2196f3;
-    }
-
-    .rainbow-letters span:nth-child(10n + 6) {
-      color: #00bcd4;
-    }
-
-    .rainbow-letters span:nth-child(10n + 7) {
-      color: #9320c9;
-    }
-
-    .rainbow-letters span:nth-child(10n + 8) {
-      color: #ff07ff;
-    }
-    .rainbow-letters span:nth-child(10n + 9) {
-      color: #e7193c;
-    }
-    .rainbow-letters span:nth-child(10n + 10) {
-      color: #e4a112;
-    }
-
     body {
       color: #c0c0c0; /* default text color for the page */
     }
 
-    .color-columns {
-      width: 20%;
-      padding: 15px;
+    #chart-controls {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
-    .microorganism {
-      height: 97px;
-      font-size: 0.95vw;
+    #active-chart {
+      margin-top: 1rem;
+      width: 100%;
+      height: 500px;
     }
 
-    .chlorophyll {
-      height: 60px;
-      font-size: 0.95vw;
-    }
-
-    .names {
-      height: 90px;
-      overflow-wrap: break-word;
-    }
-
-    .names p {
-      font-size: 2vw;
-    }
-
-    @media screen and (max-width: 1000px) {
-      .names {
-        height: 60px;
-      }
-    }
-
-    @media screen and (max-width: 750px) {
-      .names {
-        height: 45px;
-      }
-    }
-
-    @media screen and (max-width: 510px) {
-      .color-columns {
-        width: 100%;
-        padding: 15px;
-      }
-
-      .microorganism {
-        font-size: 18px;
-      }
-
-      .chlorophyll {
-        font-size: 18px;
-      }
-
-      .names {
-        height: 60px;
-      }
-
-      .names p {
-        font-size: 30px;
-      }
-    }
-
-    .color-text {
-      float: left;
-    }
-
-    .conc-text {
-      float: right;
+    .max-y-input {
+      width: 5rem;
     }
   </style>
   <body>
@@ -156,11 +66,7 @@
       </div>
 
       <div id="chart-controls"></div>
-      <div
-        id="active-chart"
-        class="mt-4"
-        style="width: 100%; height: 500px"
-      ></div>
+      <div id="active-chart"></div>
     </div>
 
     <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
