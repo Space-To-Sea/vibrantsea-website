@@ -26,7 +26,7 @@ function nearestJan1(dateStr) {
   return jan1.toISOString().slice(0, 10); // "YYYY-MM-DD"
 }
 
-function setupControls(controlsDiv) {
+function setupBarChartControls(controlsDiv) {
   const startInput = document.createElement("input");
   startInput.type = "date";
   startInput.id = "start-date";
@@ -137,6 +137,32 @@ function setupControls(controlsDiv) {
   controlsDiv.appendChild(applyButton);
 }
 
+function setupTrendlineControls(controlsDiv) {
+  const maxYInput = document.createElement("input");
+  maxYInput.type = "number";
+  maxYInput.id = "max-y";
+  maxYInput.className = "max-y-input";
+
+  const applyButton = document.createElement("button");
+  applyButton.textContent = "Apply";
+  applyButton.onclick = function () {
+    const updates = {};
+    const maxY = maxYInput.value;
+
+    if (maxY) {
+      const maxYFloat = parseFloat(maxY);
+      if (!isNaN(maxYFloat) && maxYFloat > 0) {
+        updates["yaxis.range"] = [0, maxYFloat];
+      }
+    }
+    Plotly.relayout("active-chart", updates);
+  };
+
+  controlsDiv.appendChild(document.createTextNode("Max Y: "));
+  controlsDiv.appendChild(maxYInput);
+  controlsDiv.appendChild(applyButton);
+}
+
 function render() {
   if (!allPlanktonData) return;
 
@@ -148,8 +174,104 @@ function render() {
 
   if (currentChartType === "bar") {
     drawStackedBar("active-chart", allPlanktonData, 1);
-    setupControls(controlsDiv);
+    setupBarChartControls(controlsDiv);
+  } else if (currentChartType === "line") {
+    drawTrendline(
+      "active-chart",
+      allPlanktonData,
+      ["diatoms_hirata", "greenalgae_hirata"],
+      [1, 2],
+    );
+    setupTrendlineControls(controlsDiv);
   }
+}
+function adjustColor(rgb, factor) {
+  const [r, g, b] = rgb.match(/\d+/g).map(Number);
+
+  const clamp = (v) => Math.max(0, Math.min(255, v));
+
+  return `rgb(${clamp(r * factor)}, ${clamp(
+    g * factor,
+  )}, ${clamp(b * factor)})`;
+}
+
+function drawTrendline(targetDiv, allPlanktonData, speciesList, regionList) {
+  const traces = [];
+  const regionShifts = [1, 0.6, 1.2, 1.8];
+  regionList.forEach((regionNum) => {
+    const regionRows = allPlanktonData.filter(
+      (r) => parseInt(r.region) === regionNum,
+    );
+
+    const dates = regionRows.map((r) => r.date);
+
+    speciesList.forEach((species) => {
+      const avg = regionRows.map((r) => parseFloat(r[species + "_avg"]));
+      const min = regionRows.map((r) => parseFloat(r[species + "_min"]));
+      const max = regionRows.map((r) => parseFloat(r[species + "_max"]));
+
+      // max line (hidden)
+      traces.push({
+        x: dates,
+        y: max,
+        line: { width: 0 },
+        showlegend: false,
+        hoverinfo: "skip",
+      });
+
+      // min-max band
+      traces.push({
+        x: dates,
+        y: min,
+        fill: "tonexty",
+        fillcolor: PLANKTON_CONFIG[species].color
+          .replace("rgb", "rgba")
+          .replace(")", ",0.2)"),
+        line: { width: 0 },
+        name: `${PLANKTON_CONFIG[species].name} Range (Region ${regionNum})`,
+      });
+
+      // avg line
+      traces.push({
+        x: dates,
+        y: avg,
+        mode: "lines+markers",
+        name: `${PLANKTON_CONFIG[species].name} (Region ${regionNum})`,
+        hovertemplate:
+          "%{x|%Y-%m-%d}<br>" + "%{fullData.name}: %{y:.2f}<extra></extra>",
+        line: {
+          color: adjustColor(
+            PLANKTON_CONFIG[species].color,
+            regionShifts[regionNum - 1],
+          ),
+        },
+        marker: { size: 4 },
+      });
+    });
+  });
+
+  const layout = {
+    title: `Plankton Trendlines`,
+    xaxis: {
+      type: "date",
+      showgrid: true,
+      dtick: "M3",
+      tickformat: "%b",
+    },
+    annotations: getYearAnnotations(allPlanktonData, -0.1),
+    yaxis: { title: "mg/m³" },
+    legend: {
+      orientation: "h",
+      x: 0,
+      y: -0.3,
+      xanchor: "left",
+      yanchor: "bottom",
+      bgcolor: "rgba(255,255,255,0.6)",
+      bordercolor: "rgba(0,0,0,0.2)",
+      borderwidth: 1,
+    },
+  };
+  Plotly.newPlot(targetDiv, traces, layout);
 }
 
 function calcOtherCategory(rows) {
@@ -234,17 +356,33 @@ function drawStackedBar(targetDiv, data, regionNum) {
       tickformat: "%b",
       range: [
         nearestJan1(regionRows[0].date),
-        regionRows[regionRows.length - 1].date,
+        new Date(
+          new Date(regionRows[regionRows.length - 1].date).setDate(
+            new Date(regionRows[regionRows.length - 1].date).getDate() + 5,
+          ),
+        )
+          .toISOString()
+          .slice(0, 10),
       ],
     },
-    annotations: getYearAnnotations(allPlanktonData),
+    annotations: getYearAnnotations(allPlanktonData, -0.15),
+    legend: {
+      orientation: "h",
+      x: 0,
+      y: -0.3,
+      xanchor: "left",
+      yanchor: "bottom",
+      bgcolor: "rgba(255,255,255,0.6)",
+      bordercolor: "rgba(0,0,0,0.2)",
+      borderwidth: 1,
+    },
     showlegend: true,
   };
 
   Plotly.newPlot(targetDiv, traces, layout);
 }
 
-function getYearAnnotations(data) {
+function getYearAnnotations(data, yoffset = -0.2) {
   const years = [
     ...new Set(
       data
@@ -255,7 +393,7 @@ function getYearAnnotations(data) {
   ];
   return years.map((year) => ({
     x: `${year}-07-01`, // middle of year so it centers nicely
-    y: -0.2, // below axis
+    y: yoffset, // below axis
     xref: "x",
     yref: "paper",
     text: year.toString(),
