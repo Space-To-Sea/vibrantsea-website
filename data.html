@@ -51,11 +51,7 @@
     <div class="container-fluid mt-4">
       <h2 class="text-center">Phytoplankton Concentration Visualizations</h2>
 
-      <div id="chart1" class="plotly-graph-container"></div>
-      <div id="chart2" class="plotly-graph-container"></div>
-      <div id="chart3" class="plotly-graph-container"></div>
-      <div id="chart4" class="plotly-graph-container"></div>
-
+      <!-- Buttons to switch chart visualization type -->
       <div class="btn-group" role="group">
         <button class="btn btn-secondary" onclick="setChartType('bar')">
           Stacked Bar
@@ -65,11 +61,17 @@
         </button>
       </div>
 
+      <!-- Dynamic UI controls inserted via JS -->
       <div id="chart-controls"></div>
+
+      <!-- Main interactive Plotly chart display -->
       <div id="active-chart"></div>
     </div>
 
+    <!-- Plotly library for interactive graphs -->
     <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+
+    <!-- Custom dashboard logic (renders charts, handles UI interactions) -->
     <script src="static/js/dashboard.js"></script>
   </body>
 </html>
