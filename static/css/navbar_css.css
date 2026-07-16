@@ -14,7 +14,7 @@
   }
 }
 .seaGrantLogo {
-  width: 250px;
+  width: 35px;
 }
 
 @media screen and (max-width: 375px) {
@@ -22,3 +22,33 @@
     width: 175px;
   }
 }
+
+/*ABOUT SECTION*/
+  /* Open dropdown on hover */
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+
+  /* Keep the toggle of about styled like the other links */
+  .navbar .dropdown-toggle::after {
+    margin-left: .4rem;
+  }
+
+  /*customize dropdown box*/
+  .dropdown-menu {
+    background-color: rgba(180, 180, 180, 0.6); /* dark gray with transparency */
+    border: none;
+  }
+
+  /*drop down box text*/
+  .dropdown-item {
+    color: #e8e8e8;
+  }
+
+  /*drop down box item on hover*/
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: rgba(255, 255, 255, 0.35);
+    color: #000;
+  }

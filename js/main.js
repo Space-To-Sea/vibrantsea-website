@@ -13,7 +13,7 @@ function navBar() {
   nav_col1.id = "nav_col1";
   nav_col1.innerHTML =
     '<span class="navbar-brand mb-0 h1" style="font-size: x-large;">' +
-    '<img class="seaGrantLogo" src="static/images/MIT_MITSG_EqualFocus_Logo_White_large-copy.png">' +
+    '<img class="seaGrantLogo" src="static/images/MIT_MITSG_EqualFocus_Logo_White_large-copy.png" width="35px">' +
     '<a href="https://space2sea.mit.edu" class="spaceToSeaText" style="text-decoration: none; color: inherit;"><b>SPACE TO SEA</b><img src="static/images/dino_drawing.png" width="35px"></a>' +
     "</span>" +
     '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">' +
@@ -36,7 +36,7 @@ function navBar() {
     ["Process", "process.html"],
     ["Remote Sensing", "satellites.html"],
     ["Data", "data.html"],
-    ["About Us", "about_us.html"],
+    ["Project Website", "https://space2sea.mit.edu"]
   ];
   $.each(navbarItems, function (i) {
     var navbarNavListItem = document.createElement("li");
@@ -50,6 +50,52 @@ function navBar() {
     a_link.innerHTML = navbarItems[i][0];
     navbarNavListItem.appendChild(a_link);
     navbarNavList.appendChild(navbarNavListItem);
+
+    // Insert About dropdown after Data
+  if (i === 5) {
+
+    var aboutItem = document.createElement("li");
+    aboutItem.classList.add("nav-item", "dropdown");
+
+    var currentPage = window.location.pathname.split("/").pop();
+    if (currentPage === "AboutProject.html" || currentPage === "about_us.html") {
+      aboutItem.classList.add("active");
+    }
+
+    var aboutLink = document.createElement("a");
+    aboutLink.classList.add("nav-link", "dropdown-toggle");
+    aboutLink.href = "#";
+    aboutLink.id = "aboutDropdown";
+    aboutLink.setAttribute("role", "button");
+    aboutLink.setAttribute("data-toggle", "dropdown"); // Bootstrap 4
+    aboutLink.setAttribute("aria-haspopup", "true");
+    aboutLink.setAttribute("aria-expanded", "false");
+    aboutLink.innerHTML = "About";
+
+    var dropdownMenu = document.createElement("div");
+    dropdownMenu.classList.add("dropdown-menu");
+    dropdownMenu.setAttribute("aria-labelledby", "aboutDropdown");
+
+    var projectLink = document.createElement("a");
+    projectLink.classList.add("dropdown-item");
+    projectLink.href = "AboutProject.html";
+    projectLink.innerHTML = "About the Project";
+
+    var usLink = document.createElement("a");
+    usLink.classList.add("dropdown-item");
+    usLink.href = "about_us.html";
+    usLink.innerHTML = "About Us";
+
+    dropdownMenu.appendChild(projectLink);
+    dropdownMenu.appendChild(usLink);
+
+    aboutItem.appendChild(aboutLink);
+    aboutItem.appendChild(dropdownMenu);
+
+    // Add the dropdown to the navbar
+    navbarNavList.appendChild(aboutItem);
+  }
+
   });
   navbarNav.appendChild(navbarNavList);
   nav_container_fluid.appendChild(nav_col1);
