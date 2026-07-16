@@ -58,7 +58,7 @@ function navBar() {
     aboutItem.classList.add("nav-item", "dropdown");
 
     var currentPage = window.location.pathname.split("/").pop();
-    if (currentPage === "AboutProject.html" || currentPage === "about_us.html") {
+    if (currentPage === "about_project.html" || currentPage === "about_us.html") {
       aboutItem.classList.add("active");
     }
 
@@ -78,7 +78,7 @@ function navBar() {
 
     var projectLink = document.createElement("a");
     projectLink.classList.add("dropdown-item");
-    projectLink.href = "AboutProject.html";
+    projectLink.href = "about_project.html";
     projectLink.innerHTML = "About the Project";
 
     var usLink = document.createElement("a");
