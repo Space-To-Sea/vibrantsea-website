@@ -3,6 +3,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   font-family: Helvetica;
+  -webkit-text-size-adjust: auto;
   text-size-adjust: auto;
 }
 html {
@@ -243,6 +244,7 @@ body {
   background: rgba(2, 17, 27, 0.7);
   z-index: 6;
 }
+/* Safari & Chrome slider */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 120px;
@@ -257,11 +259,16 @@ input[type="range"]::-webkit-slider-thumb {
   position: relative;
   bottom: 20px;
 }
+/* Firefox satellite slider */
 input[type="range"]::-moz-range-thumb {
   height: 120px;
   width: 70px;
   background-image: url("../images/satellite_rot.png");
-  z-index: 9;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
 }
 input[type="range"]::-ms-thumb {
