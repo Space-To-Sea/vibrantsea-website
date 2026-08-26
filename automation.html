@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stellwagen Bank National Marine Sanctuary Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="static/js/wheel-zoom.js" type="text/javascript"></script>
+    <script src="static/js/js_images.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="static/css/images_css.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/navbar_css.css" />
+</head>
+<style>
+    .col {
+        width: 33.3%;
+    }
+
+    @media screen and (max-width: 750px) {
+        .col {
+            font-size: 13px;
+        }
+    }
+</style>
+</head>
+
+
+<body>
+    <script type="text/javascript">
+        navBar();
+
+    </script>
+    <div class="container-fluid" style="position: relative; top: 80px;">
+        <h1 style="color: lightgrey;">Automation Pipeline</h1>
+        <p style="color: lightgray;">Previously, the entire process of creating a visualization of one date manually took multiple hours and intensive care.
+            This causes the process to complete each date very gradually, and other methods would be preferred to speed up the process. As a result, we have created an
+            automation pipeline that completes the destriping much faster than if a person tried it by hand.  </p>
+
+        <h3 style="color: gray;">The Pipeline</h3>
+        <p style="color: lightgray; position: relative;"> The automation pipeline consists of multiple Python files and packages.
+            Firstly, a Python script inputs a date and retrieves the satellite Landsat data by placing an order on the ESPA website.
+            The script automatically downloads the data and creates a CSV that describes the phytoplankton concentration in four regions of interest.
+            Afterwards, it processes the raw satellite data to make initial RBG images of the different types of phytoplankton through L2gen.
+            Finally, the post-processing pipeline rotates, interpolates, and destripes those images, which mimics the manual Photoshop process that takes hours. </p>
+
+        <h3 style="color: gray;">What Next?</h3>
+        <p style="color: lightgray; position: relative;">Through the pipeline, we will be able to drastically minimize the time it takes to make visualizations.
+            We are currently working on further improving the pipeline by perfecting the destriping algorithm through various methods.
+            By implementing these improvements, we hope to create the most accurate visualizations to date. </p>
+
+    </div>
+</body>
+</html>

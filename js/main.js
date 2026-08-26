@@ -33,7 +33,6 @@ function navBar() {
     ["Satellite Visualization", "index.html"],
     ["Gallery", "gallery.html"],
     ["Ocean Color", "oceancolor.html"],
-    ["Process", "process.html"],
     ["Remote Sensing", "satellites.html"],
     ["Data", "data.html"],
     ["Project Website", "https://space2sea.mit.edu"]
@@ -51,14 +50,68 @@ function navBar() {
     navbarNavListItem.appendChild(a_link);
     navbarNavList.appendChild(navbarNavListItem);
 
-    // Insert About dropdown after Data
-  if (i === 5) {
+  // Insert Process dropdown after OceanColor
+  if (i === 2) {
+    var processItem = document.createElement("li");
+    processItem.classList.add("nav-item", "dropdown");
 
+    var currentPage = window.location.pathname.split("/").pop();
+
+    if (
+      currentPage === "process.html" ||
+      currentPage === "automation.html"
+    ) {
+      processItem.classList.add("active");
+    }
+
+    var processLink = document.createElement("a");
+    processLink.classList.add("nav-link", "dropdown-toggle");
+    processLink.href = "#";
+    processLink.id = "processDropdown";
+    processLink.setAttribute("role", "button");
+    processLink.setAttribute("data-toggle", "dropdown");
+    processLink.setAttribute("aria-haspopup", "true");
+    processLink.setAttribute("aria-expanded", "false");
+    processLink.innerHTML = "Process";
+
+    var processDropdownMenu = document.createElement("div");
+    processDropdownMenu.classList.add("dropdown-menu");
+    processDropdownMenu.setAttribute(
+      "aria-labelledby",
+      "processDropdown"
+    );
+
+    var processPageLink = document.createElement("a");
+    processPageLink.classList.add("dropdown-item");
+    processPageLink.href = "process.html";
+    processPageLink.innerHTML = "Process";
+
+    var automationLink = document.createElement("a");
+    automationLink.classList.add("dropdown-item");
+    automationLink.href = "automation.html";
+    automationLink.innerHTML = "Automation";
+
+    processDropdownMenu.appendChild(processPageLink);
+    processDropdownMenu.appendChild(automationLink);
+
+    processItem.appendChild(processLink);
+    processItem.appendChild(processDropdownMenu);
+
+    navbarNavList.appendChild(processItem);
+  }
+
+
+  // Insert About dropdown after Data
+  if (i === 4) {
     var aboutItem = document.createElement("li");
     aboutItem.classList.add("nav-item", "dropdown");
 
     var currentPage = window.location.pathname.split("/").pop();
-    if (currentPage === "about_project.html" || currentPage === "about_us.html") {
+
+    if (
+      currentPage === "about_project.html" ||
+      currentPage === "about_us.html"
+    ) {
       aboutItem.classList.add("active");
     }
 
@@ -67,14 +120,17 @@ function navBar() {
     aboutLink.href = "#";
     aboutLink.id = "aboutDropdown";
     aboutLink.setAttribute("role", "button");
-    aboutLink.setAttribute("data-toggle", "dropdown"); // Bootstrap 4
+    aboutLink.setAttribute("data-toggle", "dropdown");
     aboutLink.setAttribute("aria-haspopup", "true");
     aboutLink.setAttribute("aria-expanded", "false");
     aboutLink.innerHTML = "About";
 
-    var dropdownMenu = document.createElement("div");
-    dropdownMenu.classList.add("dropdown-menu");
-    dropdownMenu.setAttribute("aria-labelledby", "aboutDropdown");
+    var aboutDropdownMenu = document.createElement("div");
+    aboutDropdownMenu.classList.add("dropdown-menu");
+    aboutDropdownMenu.setAttribute(
+      "aria-labelledby",
+      "aboutDropdown"
+    );
 
     var projectLink = document.createElement("a");
     projectLink.classList.add("dropdown-item");
@@ -86,13 +142,12 @@ function navBar() {
     usLink.href = "about_us.html";
     usLink.innerHTML = "About Us";
 
-    dropdownMenu.appendChild(projectLink);
-    dropdownMenu.appendChild(usLink);
+    aboutDropdownMenu.appendChild(projectLink);
+    aboutDropdownMenu.appendChild(usLink);
 
     aboutItem.appendChild(aboutLink);
-    aboutItem.appendChild(dropdownMenu);
+    aboutItem.appendChild(aboutDropdownMenu);
 
-    // Add the dropdown to the navbar
     navbarNavList.appendChild(aboutItem);
   }
 
