@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stellwagen Bank National Marine Sanctuary Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="static/js/wheel-zoom.js" type="text/javascript"></script>
+    <script src="static/js/js_images.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="static/css/images_css.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/navbar_css.css" />
+
+        <style>
+
+            body{
+                background:#000;
+                color:#f2f2f2;
+            }
+            .jumbotron{
+
+                background:
+                    linear-gradient(rgba(0,0,0,.45),
+                                    rgba(0,0,0,.45)),
+                    url("static/images/banner.jpg"); /*REPLACE IMAGE HERE*/
+
+                background-size:cover;
+                background-position:center;
+
+                height:500px;
+
+                margin-bottom:0;
+
+                border-radius:0;
+
+                display:flex;
+                justify-content:center;
+                align-items:center;
+
+                color:white;
+            }
+
+
+            .about{
+                line-height:1.9;
+                text-align:justify;
+                text-indent:40px;
+                font-size:1.1rem;
+            }
+
+            .google-doc-container {
+                width: 100%;
+                margin-top: 40px;
+            }
+
+            .google-doc-container iframe {
+                width: 100%;
+                min-height: 1000px;
+                border: none;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+    <script>
+        navBar();
+    </script>
+
+    <!-- Bootstrap Jumbotron -->
+
+    <div class="jumbotron jumbotron-fluid text-center">
+
+        <div class="container">
+
+            <h1 class="display-3 font-weight-bold">
+                Data Booklet
+            </h1>
+
+        </div>
+
+    </div>
+
+    <div class="container py-5">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-10">
+
+                <p class="about">
+
+                    For more information on the Space to Sea Vibrant Sea Ocean Plankton Visualization project, check out our data booklet.
+
+                </p>
+
+                <!-- Google Doc -->
+                <div class="google-doc-container">
+                    <iframe
+                        src="https://docs.google.com/document/d/e/2PACX-1vTToOKl5KMQy1KUyX01YexkyfWRlFrbCXEuNLYED_9WvKcnRT1MmMcn3Ed08SpiyulVQ1i1NM-8pXSG/pub?embedded=true"
+                        width="100%"
+                        height="1000"
+                        frameborder="0">
+                    </iframe>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </body>
+
+    </html>

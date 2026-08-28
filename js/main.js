@@ -110,7 +110,8 @@ function navBar() {
 
     if (
       currentPage === "about_project.html" ||
-      currentPage === "about_us.html"
+      currentPage === "about_us.html" ||
+      currentPage === "booklet.html"
     ) {
       aboutItem.classList.add("active");
     }
@@ -142,8 +143,14 @@ function navBar() {
     usLink.href = "about_us.html";
     usLink.innerHTML = "About Us";
 
+    var bookLink = document.createElement("a");
+    bookLink.classList.add("dropdown-item");
+    bookLink.href = "booklet.html";
+    bookLink.innerHTML = "Data Booklet";
+
     aboutDropdownMenu.appendChild(projectLink);
     aboutDropdownMenu.appendChild(usLink);
+    aboutDropdownMenu.appendChild(bookLink);
 
     aboutItem.appendChild(aboutLink);
     aboutItem.appendChild(aboutDropdownMenu);
