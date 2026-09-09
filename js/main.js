@@ -29,12 +29,12 @@ function navBar() {
   navbarNavList.classList.add("nav");
   navbarNavList.classList.add("navbar-nav");
 
+  //remeber to add back ["Data", "data.html"], after remote sensing
   var navbarItems = [
     ["Satellite Visualization", "index.html"],
     ["Gallery", "gallery.html"],
     ["Ocean Color", "oceancolor.html"],
     ["Remote Sensing", "satellites.html"],
-    ["Data", "data.html"],
     ["Project Website", "https://space2sea.mit.edu"]
   ];
   $.each(navbarItems, function (i) {
@@ -101,8 +101,8 @@ function navBar() {
   }
 
 
-  // Insert About dropdown after Data
-  if (i === 4) {
+  // Insert About dropdown after Data -normally i equals 4, but data page not ready
+  if (i === 3) {
     var aboutItem = document.createElement("li");
     aboutItem.classList.add("nav-item", "dropdown");
 
