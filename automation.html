@@ -47,8 +47,11 @@
 
         <h3 style="color: gray;">What Next?</h3>
         <p style="color: lightgray; position: relative;">Through the pipeline, we will be able to drastically minimize the time it takes to make visualizations.
-            We are currently working on further improving the pipeline by perfecting the destriping algorithm through various methods.
-            By implementing these improvements, we hope to create the most accurate visualizations to date. </p>
+            Currently, we use a hybrid Wavelet–FFT method that decomposes each image by scale and direction, isolates the vertical-detail components associated with striping,
+            and suppresses stripe-related frequencies before reconstruction. We have also improved the pipeline's handling of image rotation, boundaries, missing data, and reconstruction.
+            We implemented random sampling to test different wavelet types, decomposition levels, and Gaussian damping values to optimize the destriping process while preserving ocean and land artifacts.
+            These improvements bring us closer to a fully automated pipeline that can produce consistent, high-quality images without the hours of manual post-processing.
+            As we continue working on further improving the pipeline, we hope to create the most accurate visualizations to date. </p>
 
     </div>
 </body>
