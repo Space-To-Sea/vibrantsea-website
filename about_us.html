@@ -31,12 +31,12 @@
         height: 285px;
       }
 
-      .keith-cell{
-        width: 70%
+      .keith-image {
+        height: 150px;
       }
 
-      .keith-image {
-        height: 200px;
+      .keith-description {
+        text-align: left;
       }
 
       @media screen and (max-width: 750px) {
@@ -58,7 +58,7 @@
     <div
       style="
         position: absolute;
-        top: 10vh;
+        top: 35vh;
         color: rgb(255, 255, 255);
         text-align: center;
         padding: 20px;
@@ -68,18 +68,25 @@
       Meet the Team
     </h1>
 
-    <!-- KEITH PROFILE  -->
+    <!-- KEITH PROFILE -->
 
-    <div class="row justify-content-center">
-      <div class="keith-cell">
-        <img
+<div class="row justify-content-center align-items-center">
+
+  <!-- LEFT: PHOTO + NAME -->
+  <div class="col-md-4">
+      <img
           src="/static/images/about_us/KeithEllenbogenPhoto.png"
           alt="Keith Ellenbogen"
           class="keith-image"
-        />
-        <h2>Keith Ellenbogen</h2>
-        <h4>MIT Sea Grant Visiting Artist</h4>
-        <p>
+      />
+
+      <h3>Keith Ellenbogen</h3>
+      <h5>Artist in Residence</h5>
+  </div>
+
+  <!-- RIGHT: DESCRIPTION -->
+  <div class="col-md-6 keith-description">
+      <p>
           Keith Ellenbogen is a celebrated underwater conservation
           photographer who is working with MIT Sea Grant as a Visiting Artist
           at the intersection of art, science and technology, to spark marine
@@ -90,10 +97,10 @@
           Aquarium's Anderson Cabot Center for Ocean Life. Keith holds an MFA
           from Parsons School for Design and is an Associate Professor of
           Photography at SUNY/Fashion Institute of Technology.
-        </p>
-      </div>
+      </p>
+  </div>
 
-    </div>
+</div>
 
     <!-- 2026 PROFILE  -->
     <h3 class="text-left">
